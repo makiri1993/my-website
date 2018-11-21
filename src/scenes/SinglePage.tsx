@@ -14,11 +14,11 @@ export default class SinglePage extends Component {
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='August 2018 - present'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          iconStyle={{ background: '#2196F3', color: '#fff' }}
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='terminal'
+              icon='project-diagram'
             />
           }
         >
@@ -34,12 +34,53 @@ export default class SinglePage extends Component {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
-          date='February 2018 - July 2018'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          date='August 2018'
+          iconStyle={{ background: '#34A853', color: '#fff' }}
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
               icon='terminal'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title'>
+            Website for immajung
+          </h3>
+          <h4 className='vertical-timeline-element-title'>Freelancing</h4>
+          <h5 className='vertical-timeline-element-subtitle'>Remote, DE</h5>
+          <p>
+            Another project with typescript, react, gatsby, netlifyCMS and
+            styled-components.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className='vertical-timeline-element--work'
+          date='June 2018'
+          iconStyle={{ background: '#34A853', color: '#fff' }}
+          icon={
+            <FontAwesomeIcon
+              style={{ width: 24, marginLeft: -12 }}
+              icon='terminal'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title'>
+            Website for Interkultureller Sozialdienst
+          </h3>
+          <h4 className='vertical-timeline-element-title'>Freelancing</h4>
+          <h5 className='vertical-timeline-element-subtitle'>Remote, DE</h5>
+          <p>
+            First project with typescript, react, gatsby and styled-components.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className='vertical-timeline-element--work'
+          date='February 2018 - July 2018'
+          iconStyle={{ background: '#2196F3', color: '#fff' }}
+          icon={
+            <FontAwesomeIcon
+              style={{ width: 24, marginLeft: -12 }}
+              icon='project-diagram'
             />
           }
         >
@@ -54,12 +95,32 @@ export default class SinglePage extends Component {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
-          date='February 2017 - February 2018'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          date='March 2017'
+          iconStyle={{ background: '#34A853', color: '#fff' }}
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
               icon='terminal'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title'>
+            App for Testing Department (automotive industry)
+          </h3>
+          <h4 className='vertical-timeline-element-title'>Freelancing</h4>
+          <h5 className='vertical-timeline-element-subtitle'>Remote, DE</h5>
+          <p>
+            Developing an app to support quality testing by spoken commands.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className='vertical-timeline-element--work'
+          date='February 2017 - February 2018'
+          iconStyle={{ background: '#2196F3', color: '#fff' }}
+          icon={
+            <FontAwesomeIcon
+              style={{ width: 24, marginLeft: -12 }}
+              icon='project-diagram'
             />
           }
         >
@@ -87,11 +148,11 @@ export default class SinglePage extends Component {
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='October 2016 - January 2017'
-          iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          iconStyle={{ background: '#EA2535', color: '#fff' }}
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='terminal'
+              icon='graduation-cap'
             />
           }
         >
