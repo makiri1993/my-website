@@ -6,6 +6,11 @@ import {
 } from 'react-vertical-timeline-component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'react-vertical-timeline-component/style.min.css'
+import {
+  faTerminal,
+  faGraduationCap,
+  faProjectDiagram
+} from '@fortawesome/free-solid-svg-icons'
 
 export default class SinglePage extends Component {
   render() {
@@ -18,7 +23,7 @@ export default class SinglePage extends Component {
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='project-diagram'
+              icon={faProjectDiagram}
             />
           }
         >
@@ -39,7 +44,7 @@ export default class SinglePage extends Component {
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='terminal'
+              icon={faTerminal}
             />
           }
         >
@@ -60,7 +65,7 @@ export default class SinglePage extends Component {
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='terminal'
+              icon={faTerminal}
             />
           }
         >
@@ -80,7 +85,7 @@ export default class SinglePage extends Component {
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='project-diagram'
+              icon={faProjectDiagram}
             />
           }
         >
@@ -100,7 +105,7 @@ export default class SinglePage extends Component {
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='terminal'
+              icon={faTerminal}
             />
           }
         >
@@ -120,7 +125,7 @@ export default class SinglePage extends Component {
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='project-diagram'
+              icon={faProjectDiagram}
             />
           }
         >
@@ -152,7 +157,7 @@ export default class SinglePage extends Component {
           icon={
             <FontAwesomeIcon
               style={{ width: 24, marginLeft: -12 }}
-              icon='graduation-cap'
+              icon={faGraduationCap}
             />
           }
         >

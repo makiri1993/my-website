@@ -9,6 +9,7 @@ export const paths = {
   appSrc: src,
   reactIndex: resolve(src, 'index.tsx'),
   packageJson: resolve(root, 'package.json'),
+  nodeModules: resolve(root, 'node_modules'),
   //   testDir: resolve(root, 'test'),
   tsconfig: resolve(root, 'tsconfig.json'),
   htmlIndex: resolve(root, 'static', 'index.html'),

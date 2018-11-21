@@ -1,17 +1,14 @@
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-
 import { paths, resolver } from './definitions'
 import env from './environment/dev.env'
 
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const hash: boolean = false
 const BaseConfig: webpack.Configuration = {
-  devtool: 'inline-source-map',
-
   entry: [
-    // require.resolve('./polyfills'),
-    require.resolve('react-dev-utils/webpackHotDevClient'),
+    require.resolve('./polyfills'),
+    // require.resolve('react-dev-utils/webpackHotDevClient'),
     paths.reactIndex
   ],
   output: {
