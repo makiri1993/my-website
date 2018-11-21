@@ -5,7 +5,7 @@ import { paths, resolver } from './definitions'
 import env from './environment/dev.env'
 
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
-
+const hash: boolean = false
 const BaseConfig: webpack.Configuration = {
   devtool: 'inline-source-map',
 
@@ -51,8 +51,8 @@ const BaseConfig: webpack.Configuration = {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),
             options: {
-              limit: 10000
-              // name: `static/media/[name].${hash ? '[hash:8].' : ''}[ext]`
+              limit: 10000,
+              name: `static/media/[name].${hash ? '[hash:8].' : ''}[ext]`
             }
           },
           {

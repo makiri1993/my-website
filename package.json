@@ -81,7 +81,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.config.dev.ts --hot true",
-    "build": "webpack --config ./config/webpack.config.dev.ts",
+    "build": "webpack --config ./config/webpack.config.prod.ts",
     "start:storybook": "start-storybook -p 6006 -c config/storybook",
     "build:storybook": "build-storybook -c config/storybook"
   }
