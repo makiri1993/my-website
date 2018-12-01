@@ -53,6 +53,14 @@ const BaseConfig: webpack.Configuration = {
             }
           },
           {
+            test: /\.svg$/,
+            include: paths.appSrc,
+            loader: [
+              // require.resolve("babel-loader"),
+              require.resolve('url-loader')
+            ]
+          },
+          {
             test: /\.(ts|tsx)$/,
             include: paths.appSrc,
             loader: [
@@ -122,7 +130,7 @@ const BaseConfig: webpack.Configuration = {
     // In development, this will be an empty string.
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: paths.htmlIndex,
       templateParameters: {
         project: { name: 'Martin Kireew' }

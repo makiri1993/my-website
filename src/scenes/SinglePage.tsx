@@ -4,13 +4,12 @@ import {
   VerticalTimeline,
   VerticalTimelineElement
 } from 'react-vertical-timeline-component'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'react-vertical-timeline-component/style.min.css'
 import {
-  faTerminal,
-  faGraduationCap,
-  faProjectDiagram
-} from '@fortawesome/free-solid-svg-icons'
+  ProjectIcon,
+  TerminalIcon,
+  GraduationIcon
+} from '../components/Icon/index'
 
 export default class SinglePage extends Component {
   render() {
@@ -20,12 +19,7 @@ export default class SinglePage extends Component {
           className='vertical-timeline-element--work'
           date='August 2018 - present'
           iconStyle={{ background: '#2196F3', color: '#fff' }}
-          icon={
-            <FontAwesomeIcon
-              style={{ width: 24, marginLeft: -12 }}
-              icon={faProjectDiagram}
-            />
-          }
+          icon={<ProjectIcon style={{ width: 24, marginLeft: -12 }} />}
         >
           <h3 className='vertical-timeline-element-title'>
             Full Stack Developer
@@ -41,12 +35,7 @@ export default class SinglePage extends Component {
           className='vertical-timeline-element--work'
           date='August 2018'
           iconStyle={{ background: '#34A853', color: '#fff' }}
-          icon={
-            <FontAwesomeIcon
-              style={{ width: 24, marginLeft: -12 }}
-              icon={faTerminal}
-            />
-          }
+          icon={<TerminalIcon style={{ width: 24, marginLeft: -12 }} />}
         >
           <h3 className='vertical-timeline-element-title'>
             Website for immajung
@@ -62,12 +51,7 @@ export default class SinglePage extends Component {
           className='vertical-timeline-element--work'
           date='June 2018'
           iconStyle={{ background: '#34A853', color: '#fff' }}
-          icon={
-            <FontAwesomeIcon
-              style={{ width: 24, marginLeft: -12 }}
-              icon={faTerminal}
-            />
-          }
+          icon={<TerminalIcon style={{ width: 24, marginLeft: -12 }} />}
         >
           <h3 className='vertical-timeline-element-title'>
             Website for Interkultureller Sozialdienst
@@ -82,12 +66,7 @@ export default class SinglePage extends Component {
           className='vertical-timeline-element--work'
           date='February 2018 - July 2018'
           iconStyle={{ background: '#2196F3', color: '#fff' }}
-          icon={
-            <FontAwesomeIcon
-              style={{ width: 24, marginLeft: -12 }}
-              icon={faProjectDiagram}
-            />
-          }
+          icon={<ProjectIcon style={{ width: 24, marginLeft: -12 }} />}
         >
           <h3 className='vertical-timeline-element-title'>IT Consultant</h3>
           <h4 className='vertical-timeline-element-title'>ITP Nord GmbH</h4>
@@ -102,12 +81,7 @@ export default class SinglePage extends Component {
           className='vertical-timeline-element--work'
           date='March 2017'
           iconStyle={{ background: '#34A853', color: '#fff' }}
-          icon={
-            <FontAwesomeIcon
-              style={{ width: 24, marginLeft: -12 }}
-              icon={faTerminal}
-            />
-          }
+          icon={<TerminalIcon style={{ width: 24, marginLeft: -12 }} />}
         >
           <h3 className='vertical-timeline-element-title'>
             App for Testing Department (automotive industry)
@@ -122,12 +96,7 @@ export default class SinglePage extends Component {
           className='vertical-timeline-element--work'
           date='February 2017 - February 2018'
           iconStyle={{ background: '#2196F3', color: '#fff' }}
-          icon={
-            <FontAwesomeIcon
-              style={{ width: 24, marginLeft: -12 }}
-              icon={faProjectDiagram}
-            />
-          }
+          icon={<ProjectIcon style={{ width: 24, marginLeft: -12 }} />}
         >
           <h3 className='vertical-timeline-element-title'>
             Junior IT Consultant
@@ -154,12 +123,7 @@ export default class SinglePage extends Component {
           className='vertical-timeline-element--work'
           date='October 2016 - January 2017'
           iconStyle={{ background: '#EA2535', color: '#fff' }}
-          icon={
-            <FontAwesomeIcon
-              style={{ width: 24, marginLeft: -12 }}
-              icon={faGraduationCap}
-            />
-          }
+          icon={<GraduationIcon style={{ width: 24, marginLeft: -12 }} />}
         >
           <h3 className='vertical-timeline-element-title'>Bachelor's Degree</h3>
           <h4 className='vertical-timeline-element-title'>

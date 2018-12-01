@@ -7,6 +7,9 @@ const DevelopmentConfig: webpack.Configuration = {
   devtool: 'inline-source-map',
   devServer: {
     historyApiFallback: true
+  },
+  optimization: {
+    usedExports: true
   }
 }
 
