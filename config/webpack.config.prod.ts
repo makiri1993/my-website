@@ -1,8 +1,7 @@
 import webpack from 'webpack'
 import { paths } from './definitions'
 import BaseConfig from './webpack.config.base'
-
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 
 const config: webpack.Configuration = {
   ...BaseConfig,
