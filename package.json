@@ -9,6 +9,8 @@
   "sideEffects": false,
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@emotion/core": "^10.0.1",
+    "@emotion/styled": "^10.0.1",
     "@storybook/addon-a11y": "4.0.9",
     "@storybook/addon-centered": "^4.0.6",
     "@storybook/addon-options": "4.0.8",
