@@ -1,7 +1,7 @@
 {
-  "name": "starter-react-typescript-webpack",
+  "name": "makiris-website",
   "version": "1.0.0",
-  "description": "Starter for React, Typescript, Webpack",
+  "description": "Website from Martin Kireew",
   "main": "index.tsx",
   "repository": "",
   "author": "Martin Kireew <kireew.martin@icloud.com",
