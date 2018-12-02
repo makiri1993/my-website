@@ -10,6 +10,7 @@ import {
   TerminalIcon,
   GraduationIcon
 } from '../components/Icon/index'
+import { keyframes } from '@emotion/core'
 
 export default class SinglePage extends Component {
   render() {
@@ -169,16 +170,25 @@ export default class SinglePage extends Component {
 }
 
 const TimelineBackground = styled.div`
-  background-image: radial-gradient(
-    circle farthest-corner at 18% 18.8%,
-    rgba(4, 150, 255, 0.63) 0%,
-    rgba(4, 150, 255, 1) 90%
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 3px solid #70798c;
+  border-radius: 4px;
+  background-image: linear-gradient(
+    135deg,
+    rgb(245, 247, 250) 0%,
+    rgb(195, 207, 226) 100%
   );
+  transition: box-shadow 1s ease-in-out;
+  :hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 `
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 `
 
 const Introduction = styled.div`
@@ -189,10 +199,14 @@ const Introduction = styled.div`
   padding-bottom: 20px;
   justify-self: flex-start;
   line-height: 2.4;
-  &:hover {
-    transition: border 0.25s;
-    border-left: 3px solid #70798c;
-    border-bottom: 3px solid #70798c;
-    /* border-color: #0e79b2; */
+
+  border: 3px solid #70798c;
+  border-radius: 4px;
+  /* border-bottom: 3px solid #70798c; */
+  /* border-color: #0e79b2; */
+  transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
+  :hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #e1e7f0;
   }
 `
