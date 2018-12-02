@@ -10,7 +10,6 @@ import {
   TerminalIcon,
   GraduationIcon
 } from '../components/Icon/index'
-import { keyframes } from '@emotion/core'
 
 export default class SinglePage extends Component {
   render() {
