@@ -10,14 +10,20 @@ import {
   TerminalIcon,
   GraduationIcon
 } from '../components/Icon/index'
+import { Border, Shadow, BackgroundColor } from 'src/definitions'
 
 export default class SinglePage extends Component {
   render() {
-    return [this.renderHeader, this.renderTimeline]
+    return (
+      <SiteContainer>
+        {this.renderHeader}
+        {this.renderTimeline}
+      </SiteContainer>
+    )
   }
   private get renderHeader(): ReactNode {
     return (
-      <Container>
+      <IntroductionContainer>
         <Introduction>
           <h1>Hello!</h1>
           <p>
@@ -33,7 +39,7 @@ export default class SinglePage extends Component {
             evolving.
           </p>
         </Introduction>
-      </Container>
+      </IntroductionContainer>
     )
   }
   private get renderTimeline(): ReactNode {
@@ -167,44 +173,47 @@ export default class SinglePage extends Component {
     )
   }
 }
+const SiteContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: ${BackgroundColor.primary.standard};
+`
 
 const TimelineBackground = styled.div`
+  max-width: 1440px;
   margin-left: 20px;
   margin-right: 20px;
-  border: 3px solid #70798c;
+  border: ${Border.thin};
   border-radius: 4px;
-  background-image: linear-gradient(
-    135deg,
-    rgb(245, 247, 250) 0%,
-    rgb(195, 207, 226) 100%
-  );
+  background-image: ${BackgroundColor.primaryGradient.lightGradient};
   transition: box-shadow 1s ease-in-out;
   :hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: ${Shadow.light};
   }
 `
 
-const Container = styled.div`
+const IntroductionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin: 50px;
+  width: 40%;
 `
 
 const Introduction = styled.div`
-  width: 40%;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  margin: 20px;
+
+  padding: 20px;
+
   justify-self: flex-start;
   line-height: 2.4;
 
-  border: 3px solid #70798c;
+  border: ${Border.thin};
   border-radius: 4px;
 
   transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
   :hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: #e1e7f0;
+    background: ${BackgroundColor.primary.lighter};
+    box-shadow: ${Shadow.light};
   }
 `
