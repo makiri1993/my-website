@@ -10,15 +10,17 @@ import {
   TerminalIcon,
   GraduationIcon
 } from '../components/Icon/index'
-import { Border, Shadow, BackgroundColor } from 'src/definitions'
+import { Border, Shadow, BackgroundColor, Space } from 'src/definitions'
 
 export default class SinglePage extends Component {
   render() {
     return (
-      <SiteContainer>
-        {this.renderHeader}
-        {this.renderTimeline}
-      </SiteContainer>
+      <SiteBackground>
+        <SiteContainer>
+          {this.renderHeader}
+          {this.renderTimeline}
+        </SiteContainer>
+      </SiteBackground>
     )
   }
   private get renderHeader(): ReactNode {
@@ -39,6 +41,7 @@ export default class SinglePage extends Component {
             evolving.
           </p>
         </Introduction>
+        <HireButton>Hire!</HireButton>
       </IntroductionContainer>
     )
   }
@@ -48,9 +51,15 @@ export default class SinglePage extends Component {
         <VerticalTimeline>
           <VerticalTimelineElement
             className='vertical-timeline-element--work'
-            date='August 2018 - present'
-            iconStyle={{ background: '#2196F3', color: '#fff' }}
-            icon={<ProjectIcon style={{ width: 24, marginLeft: -12 }} />}
+            iconStyle={{ background: '#2196F3' }}
+            icon={
+              <ProjectIcon
+                style={{
+                  width: 24,
+                  marginLeft: -12
+                }}
+              />
+            }
           >
             <h3 className='vertical-timeline-element-title'>
               Full Stack Developer
@@ -61,12 +70,24 @@ export default class SinglePage extends Component {
             <h5 className='vertical-timeline-element-subtitle'>Berlin, DE</h5>
             <p>Javascript, Typescript, Webpack, React</p>
             <p>Java, Maven, Docker</p>
+            <span
+              style={{ fontWeight: 900 }}
+              className='vertical-timeline-element-date'
+            >
+              August 2018 - present
+            </span>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className='vertical-timeline-element--work'
-            date='August 2018'
-            iconStyle={{ background: '#34A853', color: '#fff' }}
-            icon={<TerminalIcon style={{ width: 24, marginLeft: -12 }} />}
+            iconStyle={{ background: '#34A853' }}
+            icon={
+              <TerminalIcon
+                style={{
+                  width: 24,
+                  marginLeft: -12
+                }}
+              />
+            }
           >
             <h3 className='vertical-timeline-element-title'>
               Website for immajung
@@ -77,12 +98,24 @@ export default class SinglePage extends Component {
               Another project with typescript, react, gatsby, netlifyCMS and
               styled-components.
             </p>
+            <span
+              style={{ fontWeight: 900 }}
+              className='vertical-timeline-element-date'
+            >
+              August 2018
+            </span>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className='vertical-timeline-element--work'
-            date='June 2018'
-            iconStyle={{ background: '#34A853', color: '#fff' }}
-            icon={<TerminalIcon style={{ width: 24, marginLeft: -12 }} />}
+            iconStyle={{ background: '#34A853' }}
+            icon={
+              <TerminalIcon
+                style={{
+                  width: 24,
+                  marginLeft: -12
+                }}
+              />
+            }
           >
             <h3 className='vertical-timeline-element-title'>
               Website for Interkultureller Sozialdienst
@@ -93,12 +126,24 @@ export default class SinglePage extends Component {
               First project with typescript, react, gatsby and
               styled-components.
             </p>
+            <span
+              style={{ fontWeight: 900 }}
+              className='vertical-timeline-element-date'
+            >
+              June 2018
+            </span>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className='vertical-timeline-element--work'
-            date='February 2018 - July 2018'
-            iconStyle={{ background: '#2196F3', color: '#fff' }}
-            icon={<ProjectIcon style={{ width: 24, marginLeft: -12 }} />}
+            iconStyle={{ background: '#2196F3' }}
+            icon={
+              <ProjectIcon
+                style={{
+                  width: 24,
+                  marginLeft: -12
+                }}
+              />
+            }
           >
             <h3 className='vertical-timeline-element-title'>IT Consultant</h3>
             <h4 className='vertical-timeline-element-title'>ITP Nord GmbH</h4>
@@ -108,12 +153,24 @@ export default class SinglePage extends Component {
               Worked with OSPlus Framework.Developing banking Proof of Concepts.
               Deep dive into market risk management
             </p>
+            <span
+              style={{ fontWeight: 900 }}
+              className='vertical-timeline-element-date'
+            >
+              February 2018 - July 2018
+            </span>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className='vertical-timeline-element--work'
-            date='March 2017'
-            iconStyle={{ background: '#34A853', color: '#fff' }}
-            icon={<TerminalIcon style={{ width: 24, marginLeft: -12 }} />}
+            iconStyle={{ background: '#34A853' }}
+            icon={
+              <TerminalIcon
+                style={{
+                  width: 24,
+                  marginLeft: -12
+                }}
+              />
+            }
           >
             <h3 className='vertical-timeline-element-title'>
               App for Testing Department (automotive industry)
@@ -123,12 +180,24 @@ export default class SinglePage extends Component {
             <p>
               Developing an app to support quality testing by spoken commands.
             </p>
+            <span
+              style={{ fontWeight: 900 }}
+              className='vertical-timeline-element-date'
+            >
+              March 2017
+            </span>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className='vertical-timeline-element--work'
-            date='February 2017 - February 2018'
-            iconStyle={{ background: '#2196F3', color: '#fff' }}
-            icon={<ProjectIcon style={{ width: 24, marginLeft: -12 }} />}
+            iconStyle={{ background: '#2196F3' }}
+            icon={
+              <ProjectIcon
+                style={{
+                  width: 24,
+                  marginLeft: -12
+                }}
+              />
+            }
           >
             <h3 className='vertical-timeline-element-title'>
               Junior IT Consultant
@@ -149,12 +218,24 @@ export default class SinglePage extends Component {
               <strong>Remote: </strong>
               Developig a Proof of Concept (Historical Simulation)
             </p>
+            <span
+              style={{ fontWeight: 900 }}
+              className='vertical-timeline-element-date'
+            >
+              February 2017 - February 2018
+            </span>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className='vertical-timeline-element--work'
-            date='October 2016 - January 2017'
-            iconStyle={{ background: '#EA2535', color: '#fff' }}
-            icon={<GraduationIcon style={{ width: 24, marginLeft: -12 }} />}
+            iconStyle={{ background: '#EA2535' }}
+            icon={
+              <GraduationIcon
+                style={{
+                  width: 24,
+                  marginLeft: -12
+                }}
+              />
+            }
           >
             <h3 className='vertical-timeline-element-title'>
               Bachelor's Degree
@@ -167,53 +248,89 @@ export default class SinglePage extends Component {
               Writing my bachelor's degree at Finanz Informatik GmbH about
               conception.Designing a new feature in the cms of the Sparkasse.
             </p>
+            <span
+              style={{ fontWeight: 900 }}
+              className='vertical-timeline-element-date'
+            >
+              October 2016 - January 2017
+            </span>
           </VerticalTimelineElement>
         </VerticalTimeline>
       </TimelineBackground>
     )
   }
 }
+
+const SiteBackground = styled.div`
+  /* background: ${BackgroundColor.primaryGradient.lightGradient}; */
+background-image: url('../../static/assets/IMG_0255.JPG');
+background-position: center;
+background-repeat: round; 
+background-size: contain;
+`
+
 const SiteContainer = styled.div`
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
   align-items: center;
-  background: ${BackgroundColor.primary.standard};
 `
 
 const TimelineBackground = styled.div`
-  max-width: 1440px;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 100%;
+  margin-bottom: ${Space.medium};
   border: ${Border.thin};
   border-radius: 4px;
-  background-image: ${BackgroundColor.primaryGradient.lightGradient};
-  transition: box-shadow 1s ease-in-out;
+  background: ${BackgroundColor.primary.lighter};
+  transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
   :hover {
+    background: ${BackgroundColor.primary.standard};
     box-shadow: ${Shadow.light};
   }
 `
 
 const IntroductionContainer = styled.div`
+  align-self: flex-start;
   display: flex;
-  flex-direction: column;
-  margin: 50px;
-  width: 40%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: ${Space.medium};
+  margin-bottom: ${Space.medium};
+  /* margin: 50px 50px 50px 0px; */
+  width: 100%;
 `
 
 const Introduction = styled.div`
-  margin: 20px;
-
+  width: 45%;
   padding: 20px;
-
   justify-self: flex-start;
   line-height: 2.4;
-
   border: ${Border.thin};
   border-radius: 4px;
+  background: ${BackgroundColor.primary.lighter};
 
   transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
   :hover {
-    background: ${BackgroundColor.primary.lighter};
+    background: ${BackgroundColor.primary.standard};
+    box-shadow: ${Shadow.light};
+  }
+`
+
+const HireButton = styled.button`
+  width: 45%;
+  height: 100%;
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  cursor: pointer;
+  border: ${Border.thin};
+  border-radius: 4px;
+  background: ${BackgroundColor.primary.lighter};
+
+  transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
+  :hover {
+    background: ${BackgroundColor.primary.standard};
     box-shadow: ${Shadow.light};
   }
 `

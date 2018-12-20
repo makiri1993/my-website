@@ -1,3 +1,10 @@
+export const Space = {
+  small: '0.5rem',
+  medium: '1rem',
+  large: '1.5rem',
+  xlarge: '2rem'
+}
+
 export const Border = {
   thin: '2px solid #70798c'
 }
@@ -8,14 +15,10 @@ export const Shadow = {
 
 export const BackgroundColor = {
   primary: {
-    lighter: '#eff2f7',
-    standard: '#c5d1e3'
+    lighter: 'rgba(99, 99, 99, 0.4)',
+    standard: 'rgba(191, 191, 193, 0.9)'
   },
   primaryGradient: {
-    lightGradient: `linear-gradient(
-                        135deg,
-                        rgb(245, 247, 250) 0%,
-                        rgb(195, 207, 226) 100%
-                      )`
+    lightGradient: `linear-gradient( 235deg, rgb(152, 187, 240) 0%, rgba(195, 207, 226, 0.8) 100% )`
   }
 }
