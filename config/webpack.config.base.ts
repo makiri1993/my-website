@@ -4,7 +4,7 @@ import { paths, resolver } from './definitions'
 import env from './environment/dev.env'
 
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
-const hash: boolean = false
+
 const BaseConfig: webpack.Configuration = {
   entry: [
     require.resolve('./polyfills'),
@@ -46,11 +46,11 @@ const BaseConfig: webpack.Configuration = {
         oneOf: [
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
-            options: {
-              limit: 10000,
-              name: `static/media/[name].${hash ? '[hash:8].' : ''}[ext]`
-            }
+            loader: require.resolve('url-loader')
+            // options: {
+            //   limit: 10000,
+            //   name: `static/media/[name].${hash ? '[hash:8].' : ''}[ext]`
+            // }
           },
           {
             test: /\.svg$/,
