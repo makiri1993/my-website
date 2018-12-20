@@ -263,7 +263,7 @@ export default class SinglePage extends Component {
 
 const SiteBackground = styled.div`
   /* background: ${BackgroundColor.primaryGradient.lightGradient}; */
-background-image: url('src/assets/IMG_0255_2.jpg');
+background-image: url('/static/assets/IMG_0255_2.jpg');
 background-position: center;
 background-repeat: round; 
 background-size: contain;
