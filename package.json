@@ -6,7 +6,6 @@
   "repository": "",
   "author": "Martin Kireew <kireew.martin@icloud.com",
   "license": "MIT",
-  "sideEffects": false,
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@emotion/core": "^10.0.1",
