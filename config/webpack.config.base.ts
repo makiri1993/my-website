@@ -112,6 +112,10 @@ const BaseConfig: webpack.Configuration = {
               },
               require.resolve('less-loader')
             ]
+          },
+          {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [require.resolve('file-loader')]
           }
         ]
       }
