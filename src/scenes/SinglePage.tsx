@@ -12,7 +12,7 @@ import {
 } from '../components/Icon/index'
 import { Border, Shadow, BackgroundColor, Space } from 'src/definitions'
 // import BackgroundImage from '../assets/IMG_0255_2.jpg'
-
+const image = require('../assets/IMG_0255_2.jpg')
 export default class SinglePage extends Component {
   render() {
     return (
@@ -264,7 +264,8 @@ export default class SinglePage extends Component {
 
 const SiteBackground = styled.div`
   /* background: ${BackgroundColor.primaryGradient.lightGradient}; */
-background-image: url('/src/assets/IMG_0255_2.jpg');
+/* background-image: url('/src/assets/IMG_0255_2.jpg'); */
+background-image: url(${image});
 background-position: center;
 background-repeat: round; 
 background-size: contain;
