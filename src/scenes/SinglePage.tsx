@@ -320,7 +320,6 @@ const Introduction = styled.div`
 
 const HireButton = styled.button`
   width: 35%;
-  height: 100%;
   font-size: 5rem;
   letter-spacing: 1rem;
   cursor: pointer;
