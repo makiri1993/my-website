@@ -303,7 +303,7 @@ const IntroductionContainer = styled.div`
 `
 
 const Introduction = styled.div`
-  width: 45%;
+  width: 60%;
   padding: 20px;
   justify-self: flex-start;
   line-height: 2.4;
@@ -319,7 +319,7 @@ const Introduction = styled.div`
 `
 
 const HireButton = styled.button`
-  width: 45%;
+  width: 35%;
   height: 100%;
   font-size: 5rem;
   letter-spacing: 1rem;
