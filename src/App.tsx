@@ -22,7 +22,7 @@ export default class App extends Component {
             }
             * {
               margin: 0;
-              color: black !important;
+              color: white !important;
               font-family: "Poppins", Fallback, sans-serif;
             }
           `}
