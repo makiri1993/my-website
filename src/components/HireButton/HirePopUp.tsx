@@ -1,0 +1,90 @@
+import React, { Component, FormEvent } from 'react'
+
+interface Props {}
+
+interface State {
+  name: string
+  email: string
+  message: string
+}
+
+export default class HirePopUp extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props)
+    this.state = { name: '', email: '', message: '' }
+  }
+
+  /* Here’s the juicy bit for posting the form submission */
+
+  private handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: this.encode({ 'form-name': 'contact', ...this.state })
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
+  private handleChange = (e: any) => {
+    // console.table(e.target)
+    console.log(e.target)
+    console.log(e.target.name)
+    console.log(e.target.value)
+    this.setState({ [e.target.name]: e.target.value } as any)
+  }
+
+  private encode = (data: any) => {
+    return data
+      .map(
+        (key: any) =>
+          encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&')
+  }
+
+  render() {
+    const { name, email, message } = this.state
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <p>
+          <label>
+            Your Name:{' '}
+            <input
+              type='text'
+              name='name'
+              value={name}
+              onChange={this.handleChange}
+            />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email:{' '}
+            <input
+              type='email'
+              name='email'
+              value={email}
+              onChange={this.handleChange}
+            />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message:{' '}
+            <textarea
+              name='message'
+              value={message}
+              onChange={this.handleChange}
+            />
+          </label>
+        </p>
+        <p>
+          <button type='submit'>Send</button>
+        </p>
+      </form>
+    )
+  }
+}

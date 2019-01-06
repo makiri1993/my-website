@@ -11,6 +11,7 @@ import {
   GraduationIcon
 } from '../components/Icon/index'
 import { Border, Shadow, BackgroundColor, Space } from 'src/definitions'
+import HireButton from 'src/components/HireButton/HireButton'
 // import BackgroundImage from '../assets/IMG_0255_2.jpg'
 const image = require('../assets/IMG_0255_3.jpg')
 export default class SinglePage extends Component {
@@ -42,7 +43,7 @@ export default class SinglePage extends Component {
             evolving.
           </p>
         </Introduction>
-        <HireButton>Hire!</HireButton>
+        <HireButton opened={false} />
       </IntroductionContainer>
     )
   }
@@ -308,22 +309,6 @@ const Introduction = styled.div`
   justify-self: flex-start;
   line-height: 2.4;
   /* border: ${Border.thin}; */
-  border-radius: 4px;
-  background: ${BackgroundColor.primary.lighter};
-
-  transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
-  :hover {
-    background: ${BackgroundColor.primary.standard};
-    box-shadow: ${Shadow.light};
-  }
-`
-
-const HireButton = styled.button`
-  width: 35%;
-  font-size: 5rem;
-  letter-spacing: 1rem;
-  cursor: pointer;
-  border: none;
   border-radius: 4px;
   background: ${BackgroundColor.primary.lighter};
 
