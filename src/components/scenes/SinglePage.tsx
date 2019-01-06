@@ -2,18 +2,14 @@ import React, { Component, ReactNode } from 'react'
 import styled from '@emotion/styled'
 import {
   VerticalTimeline,
-  VerticalTimelineElement
+  VerticalTimelineElement,
 } from 'react-vertical-timeline-component'
-import '../style.min.css'
-import {
-  ProjectIcon,
-  TerminalIcon,
-  GraduationIcon
-} from '../components/Icon/index'
-import { Border, Shadow, BackgroundColor, Space } from 'src/definitions'
-import HireButton from 'src/components/HireButton/HireButton'
-// import BackgroundImage from '../assets/IMG_0255_2.jpg'
-const image = require('../assets/IMG_0255_3.jpg')
+import HireButton from '../HireButton/HireButton'
+import { ProjectIcon, TerminalIcon, GraduationIcon } from '../Icon'
+import { Space, Border, BackgroundColor, Shadow } from '../../definitions'
+import '../../style.min.css'
+const image = require('../../images/IMG_0255_3.jpg')
+
 export default class SinglePage extends Component {
   render() {
     return (
@@ -58,7 +54,7 @@ export default class SinglePage extends Component {
               <ProjectIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -86,7 +82,7 @@ export default class SinglePage extends Component {
               <TerminalIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -114,7 +110,7 @@ export default class SinglePage extends Component {
               <TerminalIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -142,7 +138,7 @@ export default class SinglePage extends Component {
               <ProjectIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -169,7 +165,7 @@ export default class SinglePage extends Component {
               <TerminalIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -196,7 +192,7 @@ export default class SinglePage extends Component {
               <ProjectIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -234,7 +230,7 @@ export default class SinglePage extends Component {
               <GraduationIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }

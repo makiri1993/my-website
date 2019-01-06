@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styled from '@emotion/styled'
-import { BackgroundColor, Shadow } from 'src/definitions'
+
 import HirePopUp from './HirePopUp'
+import { BackgroundColor, Shadow } from '../../definitions'
 
 interface Props {
   opened: boolean
@@ -15,7 +16,7 @@ export default class HireButton extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      open: this.props.opened
+      open: this.props.opened,
     }
   }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
 import { Global, css } from '@emotion/core'
-import SinglePage from './scenes/SinglePage'
+import Helmet from 'react-helmet'
+import SinglePage from '../components/scenes/SinglePage'
 
-export default class App extends Component {
+export default class IndexPage extends Component {
   render() {
     return (
       <>
@@ -14,16 +14,16 @@ export default class App extends Component {
         <Global
           styles={css`
             @font-face {
-              font-family: "Poppins";
+              font-family: 'Poppins';
               font-style: normal;
               font-weight: 400;
-              src: url("../static/Poppins/Poppins-Regular.ttf")
-                format("truetype");
+              src: url('../../public/static/Poppins/Poppins-Regular.ttf')
+                format('truetype');
             }
             * {
               margin: 0;
               color: white !important;
-              font-family: "Poppins", Fallback, sans-serif;
+              font-family: 'Poppins', Fallback, sans-serif;
             }
           `}
         />
