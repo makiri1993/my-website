@@ -281,7 +281,7 @@ const SiteContainer = styled.div`
 const TimelineBackground = styled.div`
   width: 100%;
   margin-bottom: ${Space.medium};
-  border: ${Border.thin};
+  /* border: ${Border.thin}; */
   border-radius: 4px;
   background: ${BackgroundColor.primary.lighter};
   transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
@@ -307,7 +307,7 @@ const Introduction = styled.div`
   padding: 20px;
   justify-self: flex-start;
   line-height: 2.4;
-  border: ${Border.thin};
+  /* border: ${Border.thin}; */
   border-radius: 4px;
   background: ${BackgroundColor.primary.lighter};
 
@@ -323,7 +323,7 @@ const HireButton = styled.button`
   font-size: 5rem;
   letter-spacing: 1rem;
   cursor: pointer;
-  border: ${Border.thin};
+  border: none;
   border-radius: 4px;
   background: ${BackgroundColor.primary.lighter};
 
