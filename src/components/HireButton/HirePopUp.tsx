@@ -1,4 +1,4 @@
-import React, { Component, FormEvent } from 'react'
+import React, { Component } from 'react'
 
 interface Props {}
 
@@ -47,7 +47,6 @@ export default class HirePopUp extends Component<Props, State> {
   // }
 
   render() {
-    const { name, email, message } = this.state
     return (
       <form
         name='contact'
@@ -59,34 +58,17 @@ export default class HirePopUp extends Component<Props, State> {
 
         <p>
           <label>
-            Your Name:{' '}
-            <input
-              type='text'
-              name='name'
-              value={name}
-              onChange={this.handleChange}
-            />
+            Your Name: <input type='text' name='name' />
           </label>
         </p>
         <p>
           <label>
-            Your Email:{' '}
-            <input
-              type='email'
-              name='email'
-              value={email}
-              onChange={this.handleChange}
-            />
+            Your Email: <input type='email' name='email' />
           </label>
         </p>
         <p>
           <label>
-            Message:{' '}
-            <textarea
-              name='message'
-              value={message}
-              onChange={this.handleChange}
-            />
+            Message: <textarea name='message' />
           </label>
         </p>
         <p>
