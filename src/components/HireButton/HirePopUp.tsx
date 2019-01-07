@@ -17,18 +17,27 @@ interface State {
 export default class HirePopUp extends Component<Props, State> {
   constructor(props: any) {
     super(props)
-    this.state = { name: '', email: '', message: '' }
+    this.state = {
+      name: 'trying',
+      email: 'to@use.it',
+      message: 'damn',
+    }
   }
 
   /* Here’s the juicy bit for posting the form submission */
 
   handleSubmit = (e: any) => {
+    const bodyString = encode({ 'form-name': 'contact', ...this.state })
+    console.log(bodyString)
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...this.state }),
+      body: bodyString,
     })
-      .then(() => alert('Success!'))
+      .then(() => {
+        console.table(this.state)
+        return alert('Success!')
+      })
       .catch(error => alert(error))
 
     e.preventDefault()
