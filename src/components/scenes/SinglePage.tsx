@@ -39,7 +39,7 @@ export default class SinglePage extends Component {
             evolving.
           </p>
         </Introduction>
-        <HireButton opened={false} />
+        <HireButton opened={true} />
       </IntroductionContainer>
     )
   }
