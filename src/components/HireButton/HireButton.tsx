@@ -1,38 +1,33 @@
 import React, { Component } from 'react'
 import styled from '@emotion/styled'
 
-import HirePopUp from './HirePopUp'
 import { BackgroundColor, Shadow } from '../../definitions'
+import { Link } from '@reach/router'
 
-interface Props {
-  opened: boolean
-}
+interface Props {}
 
-interface State {
-  open: boolean
-}
+interface State {}
 
 export default class HireButton extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
-    this.state = {
-      open: this.props.opened,
-    }
+    this.state = {}
   }
 
   render() {
     return (
       <>
-        <HireButtonStyled onClick={() => this.setState({ open: true })}>
+        <HireButtonStyled to='/contactpage'>Hire!</HireButtonStyled>
+        {/* <HireButtonStyled onClick={() => this.setState({ open: true })}>
           Hire!
         </HireButtonStyled>
-        {this.state.open ? <HirePopUp /> : null}
+        {this.state.open ? <HirePopUp /> : null} */}
       </>
     )
   }
 }
 
-const HireButtonStyled = styled.button`
+const HireButtonStyled = styled(Link)`
   width: 35%;
   font-size: 5rem;
   letter-spacing: 1rem;

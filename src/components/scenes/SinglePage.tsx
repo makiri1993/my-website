@@ -1,24 +1,25 @@
-import React, { Component, ReactNode } from 'react'
 import styled from '@emotion/styled'
+import React, { Component, ReactNode } from 'react'
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component'
-import HireButton from '../HireButton/HireButton'
-import { ProjectIcon, TerminalIcon, GraduationIcon } from '../Icon'
-import { Space, Border, BackgroundColor, Shadow } from '../../definitions'
+import { BackgroundColor, Border, Shadow, Space } from '../../definitions'
 import '../../style.min.css'
-const image = require('../../images/IMG_0255_3.jpg')
+import HireButton from '../HireButton/HireButton'
+import { GraduationIcon, ProjectIcon, TerminalIcon } from '../Icon'
 
-export default class SinglePage extends Component {
+interface Props {
+  path: string
+}
+
+export default class SinglePage extends Component<Props> {
   render() {
     return (
-      <SiteBackground>
-        <SiteContainer>
-          {this.renderHeader}
-          {this.renderTimeline}
-        </SiteContainer>
-      </SiteBackground>
+      <>
+        {this.renderHeader}
+        {this.renderTimeline}
+      </>
     )
   }
   private get renderHeader(): ReactNode {
@@ -39,34 +40,7 @@ export default class SinglePage extends Component {
             evolving.
           </p>
         </Introduction>
-        <HireButton opened={true} />
-        <form
-          name='contact'
-          method='post'
-          data-netlify='true'
-          data-netlify-honeypot='bot-field'
-        >
-          {/* You still need to add the hidden input with the form name to your JSX form */}
-          <input type='hidden' name='form-name' value='contact' />
-          <p>
-            <label>
-              Your Name: <input type='text' name='name' />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your Email: <input type='email' name='email' />
-            </label>
-          </p>
-          <p>
-            <label>
-              Message: <textarea name='message' />
-            </label>
-          </p>
-          <p>
-            <button type='submit'>Send</button>
-          </p>
-        </form>
+        <HireButton />
       </IntroductionContainer>
     )
   }
@@ -285,22 +259,6 @@ export default class SinglePage extends Component {
     )
   }
 }
-
-const SiteBackground = styled.div`
-  background-image: url(${image});
-  background-position: center;
-  background-repeat: round;
-  background-size: contain;
-`
-
-const SiteContainer = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 1440px;
-  align-items: center;
-`
 
 const TimelineBackground = styled.div`
   width: 100%;
