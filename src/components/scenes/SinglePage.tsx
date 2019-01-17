@@ -1,27 +1,25 @@
-import React, { Component, ReactNode } from 'react'
 import styled from '@emotion/styled'
+import React, { Component, ReactNode } from 'react'
 import {
   VerticalTimeline,
-  VerticalTimelineElement
+  VerticalTimelineElement,
 } from 'react-vertical-timeline-component'
-import '../style.min.css'
-import {
-  ProjectIcon,
-  TerminalIcon,
-  GraduationIcon
-} from '../components/Icon/index'
-import { Border, Shadow, BackgroundColor, Space } from 'src/definitions'
-// import BackgroundImage from '../assets/IMG_0255_2.jpg'
-const image = require('../assets/IMG_0255_3.jpg')
-export default class SinglePage extends Component {
+import { BackgroundColor, Border, Shadow, Space } from '../../definitions'
+import '../../style.min.css'
+import HireButton from '../HireButton/HireButton'
+import { GraduationIcon, ProjectIcon, TerminalIcon } from '../Icon'
+
+interface Props {
+  path: string
+}
+
+export default class SinglePage extends Component<Props> {
   render() {
     return (
-      <SiteBackground>
-        <SiteContainer>
-          {this.renderHeader}
-          {this.renderTimeline}
-        </SiteContainer>
-      </SiteBackground>
+      <>
+        {this.renderHeader}
+        {this.renderTimeline}
+      </>
     )
   }
   private get renderHeader(): ReactNode {
@@ -42,7 +40,7 @@ export default class SinglePage extends Component {
             evolving.
           </p>
         </Introduction>
-        <HireButton>Hire!</HireButton>
+        <HireButton />
       </IntroductionContainer>
     )
   }
@@ -57,7 +55,7 @@ export default class SinglePage extends Component {
               <ProjectIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -85,7 +83,7 @@ export default class SinglePage extends Component {
               <TerminalIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -113,7 +111,7 @@ export default class SinglePage extends Component {
               <TerminalIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -141,7 +139,7 @@ export default class SinglePage extends Component {
               <ProjectIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -168,7 +166,7 @@ export default class SinglePage extends Component {
               <TerminalIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -195,7 +193,7 @@ export default class SinglePage extends Component {
               <ProjectIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -233,7 +231,7 @@ export default class SinglePage extends Component {
               <GraduationIcon
                 style={{
                   width: 24,
-                  marginLeft: -12
+                  marginLeft: -12,
                 }}
               />
             }
@@ -262,26 +260,10 @@ export default class SinglePage extends Component {
   }
 }
 
-const SiteBackground = styled.div`
-  background-image: url(${image});
-  background-position: center;
-  background-repeat: round;
-  background-size: contain;
-`
-
-const SiteContainer = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 1440px;
-  align-items: center;
-`
-
 const TimelineBackground = styled.div`
   width: 100%;
   margin-bottom: ${Space.medium};
-  border: ${Border.thin};
+  /* border: ${Border.thin}; */
   border-radius: 4px;
   background: ${BackgroundColor.primary.lighter};
   transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
@@ -307,23 +289,7 @@ const Introduction = styled.div`
   padding: 20px;
   justify-self: flex-start;
   line-height: 2.4;
-  border: ${Border.thin};
-  border-radius: 4px;
-  background: ${BackgroundColor.primary.lighter};
-
-  transition: background 1s ease-in-out, box-shadow 1s ease-in-out;
-  :hover {
-    background: ${BackgroundColor.primary.standard};
-    box-shadow: ${Shadow.light};
-  }
-`
-
-const HireButton = styled.button`
-  width: 35%;
-  font-size: 5rem;
-  letter-spacing: 1rem;
-  cursor: pointer;
-  border: ${Border.thin};
+  /* border: ${Border.thin}; */
   border-radius: 4px;
   background: ${BackgroundColor.primary.lighter};
 
