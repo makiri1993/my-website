@@ -1,14 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link class="mx-1" to="/">Home</router-link>|
+    <Nav>
+      <router-link class="mx-1" to="/">Home</router-link>
       <router-link class="mx-1" to="/cv">CV</router-link>
-    </div>
+      <router-link class="mx-1" to="/test">Contact</router-link>
+    </Nav>
     <div class="container">
       <router-view/>
     </div>
   </div>
 </template>
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import Nav from '@/components/Nav.vue'
+
+@Component({
+  components: {
+    Nav,
+  },
+})
+export default class App extends Vue {}
+</script>
 
 <style>
 @font-face {
@@ -19,6 +32,9 @@
 }
 :root {
   --color-black: #2c3e50;
+  --color-active-link: #005bf8;
+  --color-navbar: #cad5e8;
+
   --no-space: 0rem;
   --extra-small-space: 0.5rem;
   --small-space: 1rem;
@@ -26,11 +42,19 @@
   --large-space: 2rem;
   --extra-large-space: 2.5rem;
 
-  --max-width: 88vw;
+  --standard-font-size: 1.8vh;
+  --bigger-font-size: 2.2vh;
+  --h1-font-size: 3vh;
+  --icon-font-size: 2.4vh;
+
+  --standard-border: solid 1px var(--color-black);
+  --standard-border-radius: 3px;
+  --max-width: 80vw;
 }
 * {
   margin: 0;
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-size: var(--standard-font-size);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-black);
@@ -39,20 +63,9 @@
 #app {
   text-align: center;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: var(--color-black);
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 
 .container {
+  overflow: hidden;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -213,5 +226,161 @@
 
 .mt-5 {
   margin-top: var(--extra-large-space);
+}
+
+.px-0 {
+  padding-left: var(--no-space);
+  padding-right: var(--no-space);
+}
+
+.px-1 {
+  padding-left: var(--extra-small-space);
+  padding-right: var(--extra-small-space);
+}
+
+.px-2 {
+  padding-left: var(--small-space);
+  padding-right: var(--small-space);
+}
+
+.px-3 {
+  padding-left: var(--medium-space);
+  padding-right: var(--medium-space);
+}
+
+.px-4 {
+  padding-left: var(--large-space);
+  padding-right: var(--large-space);
+}
+
+.px-5 {
+  padding-left: var(--extra-large-space);
+  padding-right: var(--extra-large-space);
+}
+
+.pl-0 {
+  padding-left: var(--no-space);
+}
+
+.pl-1 {
+  padding-left: var(--extra-small-space);
+}
+
+.pl-2 {
+  padding-left: var(--small-space);
+}
+
+.pl-3 {
+  padding-left: var(--medium-space);
+}
+
+.pl-4 {
+  padding-left: var(--large-space);
+}
+
+.pl-5 {
+  padding-left: var(--extra-large-space);
+}
+
+.pr-0 {
+  padding-right: var(--no-space);
+}
+
+.pr-1 {
+  padding-right: var(--extra-small-space);
+}
+
+.pr-2 {
+  padding-right: var(--small-space);
+}
+
+.pr-3 {
+  padding-right: var(--medium-space);
+}
+
+.pr-4 {
+  padding-right: var(--large-space);
+}
+
+.pr-5 {
+  padding-right: var(--extra-large-space);
+}
+
+.py-0 {
+  padding-top: var(--no-space);
+  padding-bottom: var(--no-space);
+}
+
+.py-1 {
+  padding-top: var(--extra-small-space);
+  padding-bottom: var(--extra-small-space);
+}
+
+.py-2 {
+  padding-top: var(--small-space);
+  padding-bottom: var(--small-space);
+}
+
+.py-3 {
+  padding-top: var(--medium-space);
+  padding-bottom: var(--medium-space);
+}
+
+.py-4 {
+  padding-top: var(--large-space);
+  padding-bottom: var(--large-space);
+}
+
+.py-5 {
+  padding-top: var(--extra-large-space);
+  padding-bottom: var(--extra-large-space);
+}
+
+.pb-0 {
+  padding-bottom: var(--no-space);
+}
+
+.pb-1 {
+  padding-bottom: var(--extra-small-space);
+}
+
+.pb-2 {
+  padding-bottom: var(--small-space);
+}
+
+.pb-3 {
+  padding-bottom: var(--medium-space);
+}
+
+.pb-4 {
+  padding-bottom: var(--large-space);
+}
+
+.pb-5 {
+  padding-bottom: var(--extra-large-space);
+}
+
+.pt-0 {
+  padding-top: var(--no-space);
+}
+
+.pt-1 {
+  padding-top: var(--extra-small-space);
+}
+
+.pt-2 {
+  padding-top: var(--small-space);
+}
+
+.pt-3 {
+  padding-top: var(--medium-space);
+}
+
+.pt-4 {
+  padding-top: var(--large-space);
+}
+
+.pt-5 {
+  padding-top: var(--extra-large-space);
 }
 </style>
