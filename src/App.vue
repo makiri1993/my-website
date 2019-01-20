@@ -1,20 +1,43 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link class="mx-1" to="/">Home</router-link>|
+      <router-link class="mx-1" to="/cv">CV</router-link>
     </div>
-    <router-view/>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../src/assets/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+:root {
+  --color-black: #2c3e50;
+  --no-space: 0rem;
+  --extra-small-space: 0.5rem;
+  --small-space: 1rem;
+  --medium-space: 1.5rem;
+  --large-space: 2rem;
+  --extra-large-space: 2.5rem;
+
+  --max-width: 88vw;
+}
+* {
+  margin: 0;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--color-black);
+}
+
+#app {
   text-align: center;
-  color: #2c3e50;
 }
 #nav {
   padding: 30px;
@@ -22,10 +45,173 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: var(--color-black);
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-width);
+}
+
+.mx-0 {
+  margin-left: var(--no-space);
+  margin-right: var(--no-space);
+}
+
+.mx-1 {
+  margin-left: var(--extra-small-space);
+  margin-right: var(--extra-small-space);
+}
+
+.mx-2 {
+  margin-left: var(--small-space);
+  margin-right: var(--small-space);
+}
+
+.mx-3 {
+  margin-left: var(--medium-space);
+  margin-right: var(--medium-space);
+}
+
+.mx-4 {
+  margin-left: var(--large-space);
+  margin-right: var(--large-space);
+}
+
+.mx-5 {
+  margin-left: var(--extra-large-space);
+  margin-right: var(--extra-large-space);
+}
+
+.ml-0 {
+  margin-left: var(--no-space);
+}
+
+.ml-1 {
+  margin-left: var(--extra-small-space);
+}
+
+.ml-2 {
+  margin-left: var(--small-space);
+}
+
+.ml-3 {
+  margin-left: var(--medium-space);
+}
+
+.ml-4 {
+  margin-left: var(--large-space);
+}
+
+.ml-5 {
+  margin-left: var(--extra-large-space);
+}
+
+.mr-0 {
+  margin-right: var(--no-space);
+}
+
+.mr-1 {
+  margin-right: var(--extra-small-space);
+}
+
+.mr-2 {
+  margin-right: var(--small-space);
+}
+
+.mr-3 {
+  margin-right: var(--medium-space);
+}
+
+.mr-4 {
+  margin-right: var(--large-space);
+}
+
+.mr-5 {
+  margin-right: var(--extra-large-space);
+}
+
+.my-0 {
+  margin-top: var(--no-space);
+  margin-bottom: var(--no-space);
+}
+
+.my-1 {
+  margin-top: var(--extra-small-space);
+  margin-bottom: var(--extra-small-space);
+}
+
+.my-2 {
+  margin-top: var(--small-space);
+  margin-bottom: var(--small-space);
+}
+
+.my-3 {
+  margin-top: var(--medium-space);
+  margin-bottom: var(--medium-space);
+}
+
+.my-4 {
+  margin-top: var(--large-space);
+  margin-bottom: var(--large-space);
+}
+
+.my-5 {
+  margin-top: var(--extra-large-space);
+  margin-bottom: var(--extra-large-space);
+}
+
+.mb-0 {
+  margin-bottom: var(--no-space);
+}
+
+.mb-1 {
+  margin-bottom: var(--extra-small-space);
+}
+
+.mb-2 {
+  margin-bottom: var(--small-space);
+}
+
+.mb-3 {
+  margin-bottom: var(--medium-space);
+}
+
+.mb-4 {
+  margin-bottom: var(--large-space);
+}
+
+.mb-5 {
+  margin-bottom: var(--extra-large-space);
+}
+
+.mt-0 {
+  margin-top: var(--no-space);
+}
+
+.mt-1 {
+  margin-top: var(--extra-small-space);
+}
+
+.mt-2 {
+  margin-top: var(--small-space);
+}
+
+.mt-3 {
+  margin-top: var(--medium-space);
+}
+
+.mt-4 {
+  margin-top: var(--large-space);
+}
+
+.mt-5 {
+  margin-top: var(--extra-large-space);
 }
 </style>
