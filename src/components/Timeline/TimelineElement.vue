@@ -20,7 +20,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Prop } from 'vue-property-decorator'
-import { Properties, TextAlignProperty } from 'csstype'
+import { Properties, TextAlignProperty, AlignSelfProperty, SelfPosition } from 'csstype'
 import { TimelineElementData, TimelineElementPosition } from '@/components/Timeline/TimelineContainer.vue'
 
 @Component
@@ -28,10 +28,10 @@ export default class TimelineElement extends Vue {
   @Prop() private timelineData!: TimelineElementData
   @Prop() private index!: number
   private contentAlignment: Properties | null = null
-  private iconAlignment: Properties | null = null
+  private iconAlignment: Properties | null = { fontSize: 'var(--icon-font-size)' }
   private animationDirection: string = ''
 
-  created() {
+  private created() {
     this.getJustifying()
   }
 
@@ -53,11 +53,11 @@ export default class TimelineElement extends Vue {
 
     if (this.timelineData.position === TimelineElementPosition.LEFT) {
       this.contentAlignment = alignStart
-      this.iconAlignment = alignEnd
+      this.iconAlignment = { ...this.iconAlignment, ...alignEnd }
       this.animationDirection = 'zoom-out-right'
     } else {
       this.contentAlignment = alignEnd
-      this.iconAlignment = alignStart
+      this.iconAlignment = { ...this.iconAlignment, ...alignStart }
       this.animationDirection = 'zoom-out-left'
     }
   }
@@ -68,7 +68,7 @@ export default class TimelineElement extends Vue {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 20%;
+
   white-space: pre-line;
 }
 

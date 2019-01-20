@@ -54,7 +54,8 @@ export default class CV extends Vue {
       place: 'Hanover',
       time: 'February 2018 - July 2018',
       information:
-        'Finanz Informatik GmbH:\n Worked with OSPlus Framework.Developing banking Proof of Concepts. Deep dive into market risk management',
+        'Finanz Informatik GmbH:\n Worked with OSPlus Framework.Developing banking' +
+        ' Proof of Concepts. Deep dive into market risk management',
       position: TimelineElementPosition.RIGHT,
       icon: Icon.PROJECT,
     },
@@ -75,18 +76,22 @@ export default class CV extends Vue {
       place: 'Different',
       time: 'February 2017 - February 2018',
       information:
-        'Different projects in Berlin, Hanover and remote. Berlin: Supporting the organisation of a team. Working with linux-based Servers. Hanover: rking in a huge redesign project.Process modelling all banking sses in the market risk management and liquidity risk management. Remote: Developig a Proof of Concept (Historical Simulation)',
+        'Different projects in Berlin, Hanover and remote. Berlin: Supporting the organisation' +
+        ' of a team. Working with linux-based Servers. Hanover: rking in a huge redesign project.Process modelling' +
+        ' all banking sses in the market risk management and liquidity risk management. Remote: Developig a Proof of ' +
+        'Concept (Historical Simulation)',
       position: TimelineElementPosition.RIGHT,
       icon: Icon.PROJECT,
     },
     {
       id: 7,
-      header: "Bachelor's Degree",
+      header: `Bachelor's Degree`,
       subheader: 'University of Hildesheim / Finanz Informatik GmbH',
       place: 'Hanover',
       time: 'October 2016 - January 2017',
       information:
-        "Writing my bachelor's degree at Finanz Informatik GmbH about conception.Designing a new feature in the cms of the Sparkasse.",
+        `Writing my bachelor's degree at Finanz Informatik GmbH about conception.Designing a new ` +
+        'feature in the cms of the Sparkasse.',
       position: TimelineElementPosition.LEFT,
       icon: Icon.EDUCATION,
     },
