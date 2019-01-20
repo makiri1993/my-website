@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-2">
+  <div class="container mb-4">
     <div class="introduction">
-      <h1>Hello!</h1>
+      <h1 class="greeting">Hello!</h1>
       <p>
         My name ist Martin Kireew. I live in Berlin and work as full stack
         developer.
@@ -36,6 +36,11 @@ export default class Introduction extends Vue {
 .introduction {
   display: block;
   text-align: left;
+  line-height: 2;
+}
+
+.greeting {
+  font-size: var(--h1-font-size);
 }
 </style>
 
