@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-container" :style="getGridRows()">
+  <div class="timeline-container" :style="getGridRows">
     <div class="timeline"/>
     <TimelineElement
       v-for="(el,index) in timelineElements"
@@ -13,6 +13,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Prop } from 'vue-property-decorator'
+import { Properties } from 'csstype'
 import TimelineElement from '@/components/Timeline/TimelineElement.vue'
 
 export enum Icon {
@@ -45,8 +46,10 @@ export interface TimelineElementData {
 export default class TimelineContainer extends Vue {
   @Prop() private timelineElements!: TimelineElement[]
 
-  private getGridRows(): string {
-    return `grid-template-rows: repeat(${this.timelineElements.length}, max-content);`
+  private get getGridRows(): Properties {
+    return {
+      gridTemplateRows: `repeat(${this.timelineElements.length}, max-content)`,
+    }
   }
 }
 </script>
@@ -67,25 +70,4 @@ export default class TimelineContainer extends Vue {
   width: 4px;
   background: var(--color-black);
 }
-
-/* .timeline-element-marker-left {
-  content: '\A';
-  border-style: solid;
-  border-width: 10px 15px 10px 0;
-  border-color: transparent var(--color-black) transparent transparent;
-  position: absolute;
-  top: 30%;
-  left: 30%;
-}
-
-.timeline-element-marker-right {
-  content: '\A';
-  border-style: solid;
-  border-width: 10px 15px 10px 0;
-  border-color: transparent var(--color-black) transparent transparent;
-  transform: rotate(180deg);
-  position: absolute;
-  top: 30%;
-  right: 30%;
-} */
 </style>
