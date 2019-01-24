@@ -67,7 +67,7 @@ export default class TimelineContainer extends Vue {
   grid-row: 1 / end;
   justify-self: center;
   height: 100%;
-  width: 4px;
-  background: var(--color-black);
+  width: 0.5vw;
+  background: var(--primary-color);
 }
 </style>

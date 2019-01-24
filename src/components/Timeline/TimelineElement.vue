@@ -74,9 +74,7 @@ export default class TimelineElement extends Vue {
 }
 
 .timeline-element-border {
-  border-top: solid;
-  border-top-width: 2px;
-  border-color: var(--color-black);
+  border-top: var(--primary-border);
   width: 100%;
 }
 </style>

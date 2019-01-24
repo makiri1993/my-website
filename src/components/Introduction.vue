@@ -2,7 +2,7 @@
   <div class="introduction-container mb-1 py-2">
     <img
       class="introduction-image"
-      src="../assets/city.jpg"
+      src="../assets/nerd.jpg"
       alt="Picture of guy in front of computers"
     >
     <div class="side-text-container pt-4">
@@ -38,7 +38,7 @@ export default class Introduction extends Vue {}
 <style scoped>
 .introduction-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(2, max-content);
   grid-row-gap: var(--medium-space);
   grid-column-gap: var(--medium-space);
@@ -58,7 +58,7 @@ export default class Introduction extends Vue {}
   grid-row: 2;
   display: block;
   text-align: left;
-  width: 30vw;
+  width: 40vw;
   line-height: 2;
   border: var(--primary-border);
   border-radius: var(--standard-border-radius);
