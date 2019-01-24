@@ -12,22 +12,18 @@ export default class Nav extends Vue {}
 </script>
 <style scoped>
 .nav {
-  /* position: -webkit-sticky; */
   position: sticky;
   top: 0;
   background-color: var(--primary-color);
   display: inline-flex;
   width: 100%;
   justify-content: end;
-  /* padding: 5px; */
-
-  /* border: 2px solid #4caf50; */
 }
 
 .nav a {
   font-weight: bold;
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--background-color);
   transition: font-size 0.7s;
 }
 

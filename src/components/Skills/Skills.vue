@@ -18,6 +18,7 @@
         v-show="getShowForCategory(el.category)"
       />
     </div>
+    <img src="../../assets/minimal.jpg" alt="Image of technical stuff" class="skill-image">
   </div>
 </template>
 <script lang="ts">
@@ -25,7 +26,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import SkillElement from '@/components/Skills/SkillElement.vue'
 import { Prop } from 'vue-property-decorator'
-
+import AOS from 'aos'
 export enum Category {
   ALL = 'all',
   PROGRAMMING = 'programming',
@@ -49,12 +50,9 @@ export interface SkillsData {
 export default class Skills extends Vue {
   @Prop() private skills!: SkillsData[]
   private showArray: boolean[] = [true, true, true, true]
-  private showProgramming: boolean = true
-  private showIde: boolean = true
-  private showFramework: boolean = true
-  private showDesign: boolean = true
 
   private handleCategories(category: Category): void {
+    AOS.refreshHard()
     switch (category) {
       case Category.ALL:
         this.showArray = this.showArray.map(() => true)
@@ -91,42 +89,47 @@ export default class Skills extends Vue {
 </script>
 <style scoped>
 .skills-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, max-content);
   position: relative;
   width: 100%;
 }
 
-.skills-container::after {
-  content: '';
-  position: absolute;
-  left: -10vw;
-  top: 0;
-  width: 100vw;
-  height: 100%;
-  z-index: -1;
-  background-color: var(--background-color);
-}
-
 .category-buttons-container {
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   flex-direction: row;
   justify-content: start;
 }
 
 .skill-container {
+  grid-column: 1;
+  grid-row: 2;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  z-index: 10;
 }
 
 .skill-button {
-  border: none;
-  background-color: var(--primary-color);
-  transition: background-color 500ms;
+  border: var(--primary-border);
+  border-radius: var(--standard-border-radius);
+  background-color: transparent;
+  color: var(--primary-color);
+  transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
 }
 
 .skill-button:hover {
-  background-color: var(--active-color);
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.skill-image {
+  grid-area: 2/ 1 / 2 / 1;
+  z-index: 1;
+  border-radius: var(--standard-border-radius);
+  width: 100%;
 }
 </style>
