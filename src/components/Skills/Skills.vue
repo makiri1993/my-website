@@ -1,11 +1,14 @@
 <template>
-  <div class="skills-container">
+  <div class="skills-container pt-2 px-2">
     <div class="category-buttons-container mb-3">
-      <button class="mr-2" @click="handleCategories('all')">All</button>
-      <button class="mr-2" @click="handleCategories('programming')">Programming Languages</button>
-      <button class="mr-2" @click="handleCategories('ide')">IDEs</button>
-      <button class="mr-2" @click="handleCategories('framework')">Frameworks</button>
-      <button class="mr-2" @click="handleCategories('design')">Design</button>
+      <button class="skill-button mr-1" @click="handleCategories('all')">All</button>
+      <button
+        class="skill-button mr-1"
+        @click="handleCategories('programming')"
+      >Programming Languages</button>
+      <button class="skill-button mr-1" @click="handleCategories('ide')">IDEs</button>
+      <button class="skill-button mr-1" @click="handleCategories('framework')">Frameworks</button>
+      <button class="skill-button mr-1" @click="handleCategories('design')">Design</button>
     </div>
     <div class="skill-container">
       <SkillElement
@@ -45,6 +48,7 @@ export interface SkillsData {
 })
 export default class Skills extends Vue {
   @Prop() private skills!: SkillsData[]
+  private showArray: boolean[] = [true, true, true, true]
   private showProgramming: boolean = true
   private showIde: boolean = true
   private showFramework: boolean = true
@@ -53,49 +57,36 @@ export default class Skills extends Vue {
   private handleCategories(category: Category): void {
     switch (category) {
       case Category.ALL:
-        this.showProgramming = true
-        this.showIde = true
-        this.showFramework = true
-        this.showDesign = true
+        this.showArray = this.showArray.map(() => true)
         break
       case Category.PROGRAMMING:
-        this.showProgramming = true
-        this.showIde = false
-        this.showFramework = false
-        this.showDesign = false
+        this.showArray = this.showArray.map((el, index) => (index === 0 ? true : false))
         break
       case Category.IDE:
-        this.showProgramming = false
-        this.showIde = true
-        this.showFramework = false
-        this.showDesign = false
+        this.showArray = this.showArray.map((el, index) => (index === 1 ? true : false))
         break
       case Category.FRAMEWORK:
-        this.showProgramming = false
-        this.showIde = false
-        this.showFramework = true
-        this.showDesign = false
+        this.showArray = this.showArray.map((el, index) => (index === 2 ? true : false))
         break
       case Category.DESIGN:
-        this.showProgramming = false
-        this.showIde = false
-        this.showFramework = false
-        this.showDesign = true
+        this.showArray = this.showArray.map((el, index) => (index === 3 ? true : false))
         break
     }
+    console.log(this.showArray)
   }
 
   private getShowForCategory(category: Category): boolean {
     switch (category) {
       case Category.PROGRAMMING:
-        return this.showProgramming
+        return this.showArray[0]
       case Category.IDE:
-        return this.showIde
+        return this.showArray[1]
       case Category.FRAMEWORK:
-        return this.showFramework
+        return this.showArray[2]
       case Category.DESIGN:
-        return this.showDesign
+        return this.showArray[3]
     }
+    console.log(category)
     return true
   }
 }
@@ -105,6 +96,7 @@ export default class Skills extends Vue {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: var(--background-color);
 }
 
 .category-buttons-container {
@@ -117,5 +109,15 @@ export default class Skills extends Vue {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.skill-button {
+  border: none;
+  background-color: var(--primary-color);
+  transition: background-color 500ms;
+}
+
+.skill-button:hover {
+  background-color: var(--active-color);
 }
 </style>
