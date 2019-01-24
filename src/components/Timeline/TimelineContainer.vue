@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-container" :style="getGridRows">
+  <div class="timeline-container mt-4" :style="getGridRows">
     <div class="timeline"/>
     <TimelineElement
       v-for="(el,index) in timelineElements"

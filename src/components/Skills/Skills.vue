@@ -1,5 +1,5 @@
 <template>
-  <div class="skills-container pt-2 px-2">
+  <div class="skills-container pt-2">
     <div class="category-buttons-container mb-3">
       <button class="skill-button mr-1" @click="handleCategories('all')">All</button>
       <button
@@ -72,7 +72,6 @@ export default class Skills extends Vue {
         this.showArray = this.showArray.map((el, index) => (index === 3 ? true : false))
         break
     }
-    console.log(this.showArray)
   }
 
   private getShowForCategory(category: Category): boolean {
@@ -86,7 +85,6 @@ export default class Skills extends Vue {
       case Category.DESIGN:
         return this.showArray[3]
     }
-    console.log(category)
     return true
   }
 }
@@ -95,7 +93,18 @@ export default class Skills extends Vue {
 .skills-container {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
+}
+
+.skills-container::after {
+  content: '';
+  position: absolute;
+  left: -10vw;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
   background-color: var(--background-color);
 }
 

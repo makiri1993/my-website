@@ -4,6 +4,7 @@
     :style="timelineElementPosition"
     :data-aos="animationDirection"
     data-aos-delay="400"
+    data-aos-once="true"
   >
     <font-awesome-icon :icon="timelineData.icon" class="mb-1" :style="iconAlignment"></font-awesome-icon>
     <div class="timeline-element-border" :style="contentAlignment"/>

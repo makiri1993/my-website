@@ -53,7 +53,7 @@ export default class SkillElement extends Vue {
   height: 100%;
   z-index: -1;
   border-radius: var(--standard-border-radius);
-  background-color: var(--color-green);
+  background-color: var(--primary-color);
   filter: opacity(var(--background-opacity));
 }
 

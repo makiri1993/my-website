@@ -5,7 +5,7 @@ import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGraduationCap, faProjectDiagram, faTerminal } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import ObserveVisibility from 'vue-observe-visibility'
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -13,7 +13,6 @@ AOS.init()
 library.add(faGraduationCap, faProjectDiagram, faTerminal)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.use(ObserveVisibility)
 
 Vue.config.productionTip = false
 

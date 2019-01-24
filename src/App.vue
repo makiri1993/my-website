@@ -1,14 +1,12 @@
 <template>
   <div id="app">
     <Nav>
-      <router-link class="mx-1" to="/">Home</router-link>
-      <router-link class="mx-1" to="/cv">CV</router-link>
-      <router-link class="mx-1" to="/test">Contact</router-link>
+      <router-link class="mx-4" to="/">Home</router-link>
+      <router-link class="mx-4" to="/cv">CV</router-link>
+      <!-- <router-link class="mx-4" to="/test">Contact</router-link> -->
     </Nav>
     <div class="container">
-      <transition name="fade">
-        <router-view/>
-      </transition>
+      <router-view/>
     </div>
   </div>
 </template>
@@ -26,7 +24,7 @@ export default class App extends Vue {}
 </script>
 
 <style>
-.fade-enter-active,
+/* .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;
   transition-property: opacity;
@@ -36,7 +34,7 @@ export default class App extends Vue {}
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
-}
+} */
 
 @font-face {
   font-family: 'Poppins';
@@ -46,9 +44,18 @@ export default class App extends Vue {}
 }
 :root {
   --color-black: #2c3e50;
-  --color-green: #42b983;
+  --color-green: #8ff7a7;
   --color-active-link: #005bf8;
-  --color-navbar: #cad5e8;
+  --color-blue: #0b64c0;
+  --color-dark-yellow: #f4e76e;
+  --color-yellow: #fdf06f;
+  --color-red: #d31b33;
+
+  --primary-color: var(--color-blue);
+  --active-color: var(--color-yellow);
+  --background-color: var(--color-yellow);
+
+  --primary-linear-gradient: linear-gradient(to bottom, var(--primary-color) 0.0001%, var(--background-color) 99%);
 
   --no-space: 0rem;
   --extra-small-space: 0.5rem;
@@ -76,13 +83,16 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   color: var(--color-black);
 }
+html {
+  overflow: auto;
+  background-color: var(--background-color);
+}
 
 #app {
   text-align: center;
 }
 
 .container {
-  overflow: hidden;
   margin: auto;
   display: flex;
   flex-direction: column;

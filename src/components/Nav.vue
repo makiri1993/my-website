@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav mb-3 py-2">
+  <nav class="nav py-2">
     <slot/>
   </nav>
 </template>
@@ -15,10 +15,10 @@ export default class Nav extends Vue {}
   /* position: -webkit-sticky; */
   position: sticky;
   top: 0;
-  background-color: var(--color-navbar);
+  background-color: var(--primary-color);
   display: inline-flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: end;
   /* padding: 5px; */
 
   /* border: 2px solid #4caf50; */
@@ -36,7 +36,7 @@ export default class Nav extends Vue {}
 }
 
 .nav a.router-link-exact-active {
-  color: var(--color-active-link);
+  color: var(--active-color);
   text-decoration: underline;
 }
 </style>

@@ -21,7 +21,7 @@ export default class Home extends Vue {
     { name: 'HTML', description: 'enough for every skeleton', level: 80, category: Category.PROGRAMMING },
     { name: 'CSS', description: 'in mastering', level: 70, category: Category.PROGRAMMING },
     { name: 'Javascript', description: 'new language features', level: 90, category: Category.PROGRAMMING },
-    { name: 'Typescript', description: 'since version 2', level: 70, category: Category.PROGRAMMING },
+    { name: 'Typescript', description: 'the better javascript', level: 70, category: Category.PROGRAMMING },
     { name: 'Java', description: 'only java7', level: 90, category: Category.PROGRAMMING },
     { name: 'C++', description: 'basics', level: 20, category: Category.PROGRAMMING },
     { name: 'IntelliJ', description: 'nothing better for backend', level: 85, category: Category.IDE },
