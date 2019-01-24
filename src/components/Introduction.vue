@@ -23,9 +23,7 @@ import Component from 'vue-class-component'
 import { Prop } from 'vue-property-decorator'
 
 @Component
-export default class Introduction extends Vue {
-  @Prop() private testMessage: string = 'Hello World'
-}
+export default class Introduction extends Vue {}
 </script>
 <style scoped>
 .container {

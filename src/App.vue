@@ -6,7 +6,9 @@
       <router-link class="mx-1" to="/test">Contact</router-link>
     </Nav>
     <div class="container">
-      <router-view/>
+      <transition name="fade">
+        <router-view/>
+      </transition>
     </div>
   </div>
 </template>
@@ -24,6 +26,18 @@ export default class App extends Vue {}
 </script>
 
 <style>
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -32,6 +46,7 @@ export default class App extends Vue {}
 }
 :root {
   --color-black: #2c3e50;
+  --color-green: #42b983;
   --color-active-link: #005bf8;
   --color-navbar: #cad5e8;
 
@@ -42,6 +57,7 @@ export default class App extends Vue {}
   --large-space: 2rem;
   --extra-large-space: 2.5rem;
 
+  --smaller-font-size: 1.4vh;
   --standard-font-size: 1.8vh;
   --bigger-font-size: 2.2vh;
   --h1-font-size: 3vh;
@@ -51,6 +67,7 @@ export default class App extends Vue {}
   --standard-border-radius: 3px;
   --max-width: 80vw;
 }
+
 * {
   margin: 0;
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
