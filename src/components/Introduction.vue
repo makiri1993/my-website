@@ -2,7 +2,7 @@
   <div class="introduction-container mb-1 py-2">
     <img
       class="introduction-image"
-      src="../assets/nerd.jpg"
+      src="../assets/nerd_2.jpg"
       alt="Picture of guy in front of computers"
     >
     <div class="side-text-container pt-4">
