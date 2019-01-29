@@ -35,7 +35,7 @@ import { Prop } from 'vue-property-decorator'
 @Component
 export default class Introduction extends Vue {}
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .introduction-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -43,6 +43,10 @@ export default class Introduction extends Vue {}
   grid-row-gap: var(--medium-space);
   grid-column-gap: var(--medium-space);
   position: relative;
+  justify-items: center;
+  @include media-query-phone {
+    grid-column-gap: 0;
+  }
 }
 
 .introduction-image {
@@ -51,6 +55,11 @@ export default class Introduction extends Vue {}
   border-radius: var(--standard-border-radius);
   width: 38vw;
   height: 100%;
+
+  @include media-query-phone {
+    grid-row: 2;
+    width: 80vw;
+  }
 }
 
 .introduction {
@@ -64,11 +73,16 @@ export default class Introduction extends Vue {}
   border-radius: var(--standard-border-radius);
   background-color: var(--background-color);
   transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
-}
 
-.introduction:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
+  @include media-query-phone {
+    grid-column: 1;
+    grid-row: 3;
+    width: 90vw;
+  }
 }
 
 .greeting {
@@ -80,6 +94,10 @@ export default class Introduction extends Vue {}
   /* width: 40%; */
   line-height: 0.4;
   text-align: right;
+
+  @include media-query-phone {
+    grid-column: 1;
+  }
 }
 .big-side-text {
   font-size: 12vh;

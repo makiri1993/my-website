@@ -87,13 +87,16 @@ export default class Skills extends Vue {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .skills-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(3, max-content);
   position: relative;
   width: 100%;
+  @include media-query-phone {
+    width: 90vw;
+  }
 }
 
 .category-buttons-container {
@@ -119,11 +122,11 @@ export default class Skills extends Vue {
   background-color: transparent;
   color: var(--primary-color);
   transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
-}
 
-.skill-button:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
 }
 
 .skill-image {
@@ -131,5 +134,9 @@ export default class Skills extends Vue {
   z-index: 1;
   border-radius: var(--standard-border-radius);
   width: 100%;
+
+  @include media-query-phone {
+    display: none;
+  }
 }
 </style>
