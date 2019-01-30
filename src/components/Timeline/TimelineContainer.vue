@@ -53,13 +53,17 @@ export default class TimelineContainer extends Vue {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .timeline-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: var(--large-space);
   grid-row-gap: var(--large-space);
   width: 100%;
+
+  @include media-query-phone {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .timeline {

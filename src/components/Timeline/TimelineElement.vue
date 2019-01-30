@@ -64,13 +64,17 @@ export default class TimelineElement extends Vue {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .timeline-element {
   display: flex;
   flex-direction: column;
   width: 100%;
 
   white-space: pre-line;
+
+  @include media-query-phone {
+    grid-column: 1 !important;
+  }
 }
 
 .timeline-element-border {
