@@ -104,7 +104,7 @@ export default class Skills extends Vue {
   grid-row: 1;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .skill-container {

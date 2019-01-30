@@ -17,7 +17,7 @@ export default class Nav extends Vue {}
   background-color: var(--primary-color);
   display: inline-flex;
   width: 100%;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .nav a {
