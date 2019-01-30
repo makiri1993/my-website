@@ -1,14 +1,14 @@
 <template>
   <div class="skills-container pt-2">
-    <div class="category-buttons-container mb-3">
-      <button class="skill-button mr-1" @click="handleCategories('all')">All</button>
+    <div class="category-buttons-container">
+      <button class="skill-button mr-1 mb-3" @click="handleCategories('all')">All</button>
       <button
-        class="skill-button mr-1"
+        class="skill-button mr-1 mb-3"
         @click="handleCategories('programming')"
       >Programming Languages</button>
-      <button class="skill-button mr-1" @click="handleCategories('ide')">IDEs</button>
-      <button class="skill-button mr-1" @click="handleCategories('framework')">Frameworks</button>
-      <button class="skill-button mr-1" @click="handleCategories('design')">Design</button>
+      <button class="skill-button mr-1 mb-3" @click="handleCategories('ide')">IDEs</button>
+      <button class="skill-button mr-1 mb-3" @click="handleCategories('framework')">Frameworks</button>
+      <button class="skill-button mr-1 mb-3" @click="handleCategories('design')">Design</button>
     </div>
     <div class="skill-container">
       <SkillElement
@@ -95,7 +95,6 @@ export default class Skills extends Vue {
   position: relative;
   width: 100%;
   @include media-query-phone {
-    width: 90vw;
   }
 }
 
@@ -104,6 +103,7 @@ export default class Skills extends Vue {
   grid-row: 1;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
 

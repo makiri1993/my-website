@@ -42,9 +42,12 @@ export default class Introduction extends Vue {}
   grid-template-rows: repeat(2, max-content);
   grid-row-gap: var(--medium-space);
   grid-column-gap: var(--medium-space);
+
   position: relative;
   justify-items: center;
   @include media-query-phone {
+    justify-items: left;
+    grid-template-columns: 1fr;
     grid-column-gap: 0;
   }
 }
@@ -81,7 +84,7 @@ export default class Introduction extends Vue {}
   @include media-query-phone {
     grid-column: 1;
     grid-row: 3;
-    width: 90vw;
+    width: 60vw;
   }
 }
 
@@ -103,6 +106,10 @@ export default class Introduction extends Vue {}
   font-size: 12vh;
   letter-spacing: 2vh;
   text-shadow: 5px 7px 20px var(--background-color);
+
+  @include media-query-phone {
+    font-size: 8vh;
+  }
 }
 </style>
 
