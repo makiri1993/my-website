@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Prop } from 'vue-property-decorator'
 import { Properties } from 'csstype'
-import TimelineElement from '@/components/Timeline/TimelineElement.vue'
+import TimelineElement from '@/components/Timeline/TimelineElement'
 
 export enum Icon {
   EDUCATION = 'graduation-cap',
@@ -26,11 +26,7 @@ export interface TimelineElementData {
   icon: Icon
 }
 
-@Component({
-  components: {
-    TimelineElement,
-  },
-})
+@Component
 export default class TimelineContainer extends Vue {
   @Prop() private timelineElements!: TimelineElement[]
 
@@ -41,9 +37,11 @@ export default class TimelineContainer extends Vue {
   }
   render() {
     return (
-      <div class='timeline-container mt-4' style='getGridRows'>
+      <div class='timeline-container mt-4' style={this.getGridRows}>
         <div class='timeline' />
-        <TimelineElement v-for='(el,index) in timelineElements' key='el.id' timelineData='el' index='index' />
+        {this.timelineElements.map((el, index) => (
+          <TimelineElement timelineData={el} index={index} />
+        ))}
       </div>
     )
   }

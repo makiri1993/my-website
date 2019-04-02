@@ -1,8 +1,8 @@
+import { TimelineElementData, TimelineElementPosition } from '@/components/Timeline/TimelineContainer'
+import { Properties, TextAlignProperty } from 'csstype'
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import { Prop } from 'vue-property-decorator'
-import { Properties, TextAlignProperty, AlignSelfProperty, SelfPosition } from 'csstype'
-import { TimelineElementData, TimelineElementPosition } from '@/components/Timeline/TimelineContainer.vue'
 
 @Component
 export default class TimelineElement extends Vue {
@@ -12,7 +12,7 @@ export default class TimelineElement extends Vue {
   private iconAlignment: Properties | null = { fontSize: 'var(--icon-font-size)' }
   private animationDirection: string = ''
 
-  private created() {
+  created() {
     this.getJustifying()
   }
 
@@ -45,19 +45,19 @@ export default class TimelineElement extends Vue {
 
   render() {
     return (
-      <div class='timeline-element' style='timelineElementPosition' data-aos='animationDirection' data-aos-delay='400' data-aos-once='true'>
-        <font-awesome-icon icon='timelineData.icon' class='mb-1' style='iconAlignment' />
-        <div class='timeline-element-border' style='contentAlignment' />
-        <h2 class='timeline-content' style='contentAlignment'>
+      <div class='timeline-element' style={this.timelineElementPosition} data-aos={this.animationDirection} data-aos-delay='400' data-aos-once='true'>
+        <font-awesome-icon icon={this.timelineData.icon} class='mb-1' style={this.iconAlignment} />
+        <div class='timeline-element-border' style={this.contentAlignment} />
+        <h2 class='timeline-content' style={this.contentAlignment}>
           {this.timelineData.header}
         </h2>
-        <h3 class='timeline-content' style='contentAlignment'>
+        <h3 class='timeline-content' style={this.contentAlignment}>
           {this.timelineData.subheader}
         </h3>
-        <h4 class='timeline-content mb-1' style='contentAlignment'>
+        <h4 class='timeline-content mb-1' style={this.contentAlignment}>
           {this.timelineData.place} | {this.timelineData.time}
         </h4>
-        <p class='timeline-content' style='contentAlignment'>
+        <p class='timeline-content' style={this.contentAlignment}>
           {this.timelineData.information}
         </p>
       </div>

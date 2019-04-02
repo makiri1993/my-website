@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
+// tslint:disable-next-line: no-var-requires
+const nerdImage = require('../static/nerd_2.jpg')
+
 @Component
 export default class Introduction extends Vue {
   render() {
     return (
       <div class='introduction-container mb-1 py-2'>
-        <img class='introduction-image' src='../assets/nerd_2.jpg' alt='Picture of guy in front of computers' />
+        <img class='introduction-image' src={nerdImage} alt='Picture of guy in front of computers' />
         <div class='side-text-container pt-4'>
           <h1 class='big-side-text'>Martin</h1>
           <h1 class='big-side-text'>Kireew</h1>

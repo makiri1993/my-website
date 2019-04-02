@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.5.1",
+    "@types/aos": "^3.0.1",
+    "aos": "^2.3.4",
     "csstype": "^2.6.2",
     "node-sass": "^4.11.0",
     "prettier": "^1.16.1",
