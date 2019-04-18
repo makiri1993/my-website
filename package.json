@@ -25,17 +25,18 @@
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.5.1"
+    "nuxt": "^2.6.2"
   },
   "devDependencies": {
-    "@nuxt/typescript": "^2.5.1",
+    "@nuxt/typescript": "^2.6.2",
     "@types/aos": "^3.0.1",
     "aos": "^2.3.4",
-    "csstype": "^2.6.2",
+    "csstype": "^2.6.4",
     "node-sass": "^4.11.0",
-    "prettier": "^1.16.1",
+    "prettier": "^1.17.0",
     "sass-loader": "^7.1.0",
-    "tslint": "^5.14.0",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "vue-property-decorator": "^8.1.0"
