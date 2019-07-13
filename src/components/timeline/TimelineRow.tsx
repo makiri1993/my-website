@@ -1,7 +1,7 @@
 import React from 'react'
 import TimelineElementModel from '../../model/TImelineElementModel'
 import TimelineElement from './TimelineElement'
-import { useBreakpoint } from '../../hooks/resize-hooks'
+import { useBreakpoint, useScrolling } from '../../hooks/resize-hooks'
 
 interface TimelineRowProps {
   timelineElement: TimelineElementModel
@@ -15,7 +15,7 @@ const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
       return (
         <div className="flex">
           <div className="w-10/12">
-            <TimelineElement timelineData={timelineElement} textAlign="text-left"></TimelineElement>
+            <TimelineElement timelineData={timelineElement} />
           </div>
           <VerticalSeparator />
         </div>
@@ -24,7 +24,7 @@ const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
       return (
         <div className="flex">
           <div className="w-5/12">
-            <TimelineElement timelineData={timelineElement} textAlign="text-left"></TimelineElement>
+            <TimelineElement timelineData={timelineElement} />
           </div>
           <VerticalSeparator />
           <div className="w-5/12"></div>
@@ -39,7 +39,7 @@ const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
         <div className="w-5/12"></div>
         <VerticalSeparator />
         <div className="w-5/12">
-          <TimelineElement timelineData={timelineElement} textAlign="text-right"></TimelineElement>
+          <TimelineElement timelineData={timelineElement} />
         </div>
       </div>
     )
@@ -51,10 +51,14 @@ const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
   }
 }
 
-const VerticalSeparator = () => (
-  <div className="w-2/12 flex justify-center">
-    <div className="h-full w-1 bg-black"></div>
-  </div>
-)
+const VerticalSeparator = () => {
+  const { ref, visible } = useScrolling<HTMLDivElement>()
+
+  return (
+    <div className="w-2/12 flex justify-center" ref={ref}>
+      <div className={`${visible ? 'h-full' : 'h-0'} w-1 bg-orange-400 transition-all`}></div>
+    </div>
+  )
+}
 
 export default TimelineRow

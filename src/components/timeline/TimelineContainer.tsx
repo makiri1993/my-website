@@ -7,14 +7,8 @@ interface TimelineProps {
 }
 
 const TimelineContainer = ({ timelineElements }: TimelineProps) => {
-  const getGridRows = () => {
-    return {
-      gridTemplateRows: `repeat(${timelineElements.length}, max-content)`,
-    }
-  }
-
   return (
-    <div className="flex flex-col px-6">
+    <div className="flex flex-col px-6 pt-24 bg-orange-900">
       {timelineElements.map((el, index) => (
         <TimelineRow key={index} timelineElement={el}></TimelineRow>
       ))}

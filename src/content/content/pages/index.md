@@ -59,11 +59,11 @@ timelineEvents:
     subheader: 'ITP Nord GmbH'
     place: 'Different'
     time: 'February 2017 - February 2018'
-    information: "Different projects in Berlin, Hanover and remote. \n\n
+    information: "Different projects in Berlin, Hanover and remote.\n\n
     Berlin:\n
-      Supporting the organisation of a team. Working with linux-based Servers. \n\n
+      Supporting the organisation of a team. Working with linux-based Servers.\n\n
       Hanover:\n
-      Working in a huge redesign project. Process modelling all banking processes in the risk management and liquidity risk management. \n\n
+      Working in a huge redesign project. Process modelling all banking processes in the risk management and liquidity risk management.\n\n
       Remote: \n
       Developing a Proof of Concept (Historical Simulation)"
     position: 'right'
