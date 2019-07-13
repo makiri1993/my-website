@@ -17,6 +17,9 @@ module.exports = {
       container: {
         center: true,
       },
+      fontSize: {
+        0: '0rem',
+      },
     },
   },
 }

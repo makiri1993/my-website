@@ -1,12 +1,10 @@
 ---
 pageKey: page_index
-slider:
-  slides:
-    - image: /img/Slider_new_1.jpg
-    - image: /img/Slider_new_2.jpg
-    - image: /img/Slider_new_3.jpg
-    - image: /img/Slider_new_4.jpg
-    - image: /img/Slider_new_5.jpg
+navigation:
+  - name: github
+    link: https://github.com/makiri1993
+  - name: LinkedIn
+    link: https://www.linkedin.com/in/martin-kireew-93912a153/
 introduction:
   - Hello!
   - my name is martin. I'm a full stack developer based in berlin.
@@ -76,4 +74,59 @@ timelineEvents:
     information: "Writing my bachelor's degree at Finanz Informatik GmbH about conception. Designing a new feature in the cms of the Sparkasse."
     position: 'left'
     icon: 'Icon.EDUCATION'
+skills:
+  - name: 'Typescript'
+    description: 'the better javascript'
+  - name: 'HTML'
+    description: 'enough for every skeleton'
+  - name: 'CSS'
+    description: 'in mastering'
+  - name: 'Javascript'
+    description: 'new language features'
+  - name: 'Swift 5'
+    description: 'basics'
+  - name: 'Java'
+    description: 'only java7'
+  - name: 'iOS'
+    description: 'basics'
+  - name: 'ReactJS'
+    description: 'ready to build everything'
+  - name: 'Hooks'
+    description: 'ready to build everything'
+  - name: 'VueJS'
+    description: 'experiencing the learning cure'
+  - name: 'Vuex'
+    description: 'experiencing the learning cure'
+  - name: 'NuxtJS'
+    description: 'experiencing the learning cure'
+  - name: 'GatsbyJS'
+    description: 'from the beginning'
+  - name: 'Jest'
+    description: 'way to go'
+  - name: 'Webpack'
+    description: 'better stay default'
+  - name: 'HandlebarsJS'
+    description: 'better stay default'
+  - name: 'Strapi'
+    description: 'better stay default'
+  - name: 'UI - Design'
+    description: 'for different projects'
+  - name: 'Kubernetes'
+    description: 'for different projects'
+  - name: 'Docker'
+    description: 'for different projects'
+  - name: 'Node.js'
+    description: 'private usage'
+  - name: 'KOA'
+    description: 'private usage'
+  - name: 'Express'
+    description: 'private usage'
+  - name: 'Tracking'
+    description: 'private usage'
+  - name: 'REST'
+    description: 'work experience'
+  - name: 'Spring'
+    description: 'some time ago'
+  - name: 'UX - Design'
+    description: 'for different projects'
 ---

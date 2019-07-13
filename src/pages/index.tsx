@@ -7,6 +7,8 @@ import { graphql } from 'gatsby'
 
 import TimelineElementModel, { TimelineElementModelProps } from '../model/TImelineElementModel'
 import TimelineContainer from '../components/timeline/TimelineContainer'
+import SkillModel, { SkillModelProps } from '../model/SkillModel'
+import Skills from '../components/skills/Skills'
 
 interface IndexProps {
   data: {
@@ -14,30 +16,33 @@ interface IndexProps {
       frontmatter: {
         introduction: string[]
         timelineEvents: TimelineElementModelProps[]
+        skills: SkillModelProps[]
       }
     }
   }
 }
 
 const IndexPage = ({ data }: IndexProps) => {
-  const { introduction, timelineEvents } = data.siteData.frontmatter
-  const timelineElements = parseToModel(timelineEvents)
+  const { introduction, timelineEvents, skills } = data.siteData.frontmatter
+  const timelineElements = parseToTimelineModel(timelineEvents)
+  const skillElements = parseToSkillModel(skills)
+
   return (
     <Layout>
       <SEO title="SEO Title Home" metaDescription="SEO Desc Home" />
       <Introduction content={introduction} />
-
       <TimelineContainer timelineElements={timelineElements} />
-      {/* <Image imageName="gatsby-astronaut.png" maxWidth={500} className="test" />
-    <Image imageName="gatsby-astronaut.png" maxWidth={250} className="karim" />
-    <Image imageName="gatsby-icon.png" />
-  <Image imageName="gatsby-icon.png" maxWidth={1000} /> */}
+      <Skills skills={skillElements} />
     </Layout>
   )
 }
 
-function parseToModel(timelineEvents: TimelineElementModelProps[]): TimelineElementModel[] {
+function parseToTimelineModel(timelineEvents: TimelineElementModelProps[]): TimelineElementModel[] {
   return timelineEvents.map(event => new TimelineElementModel(event))
+}
+
+function parseToSkillModel(skills: SkillModelProps[]): SkillModel[] {
+  return skills.map(skill => new SkillModel(skill))
 }
 
 export default IndexPage
@@ -56,6 +61,10 @@ export const query = graphql`
           time
           position
           icon
+        }
+        skills {
+          name
+          description
         }
       }
     }
