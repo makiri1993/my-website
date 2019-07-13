@@ -32,7 +32,8 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2",
-    "tailwindcss": "^1.0.4"
+    "tailwindcss": "^1.0.4",
+    "typescript": "^3.5.3"
   },
   "keywords": [
     "gatsby"
@@ -44,6 +45,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "clean": "rm -rf .cache",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {

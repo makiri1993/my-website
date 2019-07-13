@@ -1,44 +1,25 @@
-import React, { Component } from 'react'
-import TimelineElement from '../introduciton/Timeline/TimelineElement'
+import React from 'react'
+import TimelineRow from './TimelineRow'
+import TimelineElementModel from '../../model/TImelineElementModel'
 
-export enum Icon {
-  EDUCATION = 'graduation-cap',
-  PROJECT = 'project-diagram',
-  TERMINAL = 'terminal',
+interface TimelineProps {
+  timelineElements: TimelineElementModel[]
 }
 
-export enum TimelineElementPosition {
-  LEFT = 1,
-  RIGHT = 3,
-}
-
-export interface TimelineElementData {
-  id: number
-  header: string
-  subheader: string
-  place: string
-  time: string
-  information: string
-  position: TimelineElementPosition
-  icon: Icon
-}
-
-export default class TimelineContainer extends Component {
-  private timelineElements!: TimelineElement[]
-
-  private get getGridRows() {
+const TimelineContainer = ({ timelineElements }: TimelineProps) => {
+  const getGridRows = () => {
     return {
-      gridTemplateRows: `repeat(${this.timelineElements.length}, max-content)`,
+      gridTemplateRows: `repeat(${timelineElements.length}, max-content)`,
     }
   }
-  render() {
-    return (
-      <div className="timeline-container mt-4" style={this.getGridRows}>
-        <div className="timeline" />
-        {this.timelineElements.map((el, index) => (
-          <TimelineElement timelineData={el} index={index} />
-        ))}
-      </div>
-    )
-  }
+
+  return (
+    <div className="flex flex-col px-6">
+      {timelineElements.map((el, index) => (
+        <TimelineRow key={index} timelineElement={el}></TimelineRow>
+      ))}
+    </div>
+  )
 }
+
+export default TimelineContainer
