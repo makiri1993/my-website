@@ -1,6 +1,6 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Img, {FluidObject} from "gatsby-image"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Img, { FluidObject } from 'gatsby-image'
 
 /*
  * - `gatsby-image`: https://gatsby.dev/gatsby-image
@@ -8,36 +8,36 @@ import Img, {FluidObject} from "gatsby-image"
  */
 
 interface Props {
-  imageName: string,
-  maxWidth?: number,
-  className?: string,
+  imageName: string
+  maxWidth?: number
+  className?: string
 }
 
-const Image = ({imageName, maxWidth = 500, className=''} : Props) => (
+const Image = ({ imageName, maxWidth = 500, className = '' }: Props) => (
   <StaticQuery
-  query={graphql`
-    query {
-      allImageSharp {
-        edges {
-          node {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
-              originalName
+    query={graphql`
+      query {
+        allImageSharp {
+          edges {
+            node {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
+                originalName
+              }
             }
           }
         }
       }
-    }
-  `}
+    `}
     render={data => {
       const image = data.allImageSharp.edges.find(
-        (edge: { node: { fluid: { originalName: string; }; }; }) => edge.node.fluid.originalName === imageName
+        (edge: { node: { fluid: { originalName: string } } }) => edge.node.fluid.originalName === imageName,
       )
       if (!image) {
         return null
       }
       return (
-        <div style={{ maxWidth: maxWidth}}>
+        <div style={{ maxWidth: maxWidth }}>
           <Img className={className} fluid={image.node.fluid} />
         </div>
       )

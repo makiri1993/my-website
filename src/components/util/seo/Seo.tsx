@@ -1,14 +1,14 @@
-import React from "react"
-import Helmet from "react-helmet"
+import React from 'react'
+import Helmet from 'react-helmet'
 
 interface Props {
-  metaDescription: string,
-  lang?: string,
-  title: string,
+  metaDescription: string
+  lang?: string
+  title: string
   author?: string
 }
 
-function SEO({ metaDescription, lang='de', title, author='immajung' }: Props) {
+function SEO({ metaDescription, lang = 'de', title, author = 'immajung' }: Props) {
   return (
     <Helmet
       htmlAttributes={{

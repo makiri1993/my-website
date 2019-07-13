@@ -1,18 +1,18 @@
-import React, { ReactNode } from "react"
+import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
 
-import "./layout.scss"
+import './layout.scss'
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const Layout = ({ children }: Props) => {
-    return(
-      <>
-        <main>{children}</main>
-      </>
-    )
-  }
+  return (
+    <>
+      <main className="bg-indigo-100 h-full">{children}</main>
+    </>
+  )
+}
 
 export default Layout
