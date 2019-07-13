@@ -1,9 +1,12 @@
 import { useEffect, useState, RefObject, useRef } from 'react'
 
 export function useBreakpoint(breakpoint: number) {
-  const [isMobile, setMobile] = useState(!(window.innerWidth > breakpoint))
+  const [isMobile, setMobile] = useState(false)
 
-  useEffect(() => window.addEventListener('resize', handleResize))
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    setMobile(!(window.innerWidth > breakpoint))
+  })
   useEffect(() => () => {
     window.removeEventListener('resize', handleResize)
   })
