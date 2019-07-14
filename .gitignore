@@ -64,9 +64,10 @@ typings/
 # gatsby 
 test/**/public
 .gatsby-context.js
-.DS_Store
+
 public/
 node_modules/
 .cache/
 .netlify
 
+.DS_Store
