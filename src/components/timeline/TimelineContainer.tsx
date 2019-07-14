@@ -9,7 +9,7 @@ interface TimelineProps {
 const TimelineContainer = ({ timelineElements }: TimelineProps) => {
   return (
     <div className="bg-orange-900">
-      <div className="container flex flex-col px-6 md:px-0 py-24 ">
+      <div className="container flex flex-col px-6 xl:px-0 py-24 ">
         {timelineElements.map((el, index) => (
           <TimelineRow key={index} timelineElement={el}></TimelineRow>
         ))}
