@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { SkillModelProps } from '../../model/SkillModel'
 
 interface SkillsProps {
@@ -9,7 +9,7 @@ const Skills = ({ skills }: SkillsProps) => {
   return (
     <div className=" container flex flex-wrap bg-indigo-100 p-16">
       {skills.map(({ name }, index) => {
-        return <Skill name={name} />
+        return <Skill key={index} name={name} />
       })}
     </div>
   )
