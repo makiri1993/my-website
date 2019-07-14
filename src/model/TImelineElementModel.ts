@@ -1,9 +1,3 @@
-export enum Icon {
-  EDUCATION = 'graduation-cap',
-  PROJECT = 'project-diagram',
-  TERMINAL = 'terminal',
-}
-
 export interface TimelineElementModelProps {
   id: number
   header: string

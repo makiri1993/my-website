@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Martin Kireew - Freelancer based in Berlin`,
+    description: `Website of Martin Kireew for informations about projects and more. Feel free to contact any time about projects in web and mobile development.`,
+    author: `Martin Kireew`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -47,13 +47,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Martin Kireew - Freelancer based in Berlin`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/content/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        // icon: `src/content/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

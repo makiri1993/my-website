@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react'
-import Helmet from 'react-helmet'
-
-import './layout.scss'
 import Nav from '../../nav/Nav'
+import './layout.scss'
 
 interface Props {
   children: ReactNode
