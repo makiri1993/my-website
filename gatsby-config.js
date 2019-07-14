@@ -13,13 +13,13 @@ module.exports = {
         postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/content/images`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/content/images`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
