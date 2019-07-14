@@ -1,14 +1,12 @@
-import React from 'react'
-import Layout from '../components/layout/main/layout'
-import Image from '../components/util/image/image'
-import SEO from '../components/util/seo/Seo'
-import Introduction from '../components/introduction/Introduction'
 import { graphql } from 'gatsby'
-
-import TimelineElementModel, { TimelineElementModelProps } from '../model/TImelineElementModel'
-import TimelineContainer from '../components/timeline/TimelineContainer'
-import SkillModel, { SkillModelProps } from '../model/SkillModel'
+import React from 'react'
+import Introduction from '../components/introduction/Introduction'
+import Layout from '../components/layout/main/layout'
 import Skills from '../components/skills/Skills'
+import TimelineContainer from '../components/timeline/TimelineContainer'
+import SEO from '../components/util/seo/Seo'
+import SkillModel, { SkillModelProps } from '../model/SkillModel'
+import TimelineElementModel, { TimelineElementModelProps } from '../model/TImelineElementModel'
 
 interface IndexProps {
   data: {
@@ -29,7 +27,12 @@ const IndexPage = ({ data }: IndexProps) => {
 
   return (
     <Layout>
-      <SEO title="SEO Title Home" metaDescription="SEO Desc Home" />
+      <SEO
+        lang="en"
+        title="Martin Kireew - Freelancer based in Berlin"
+        metaDescription="Website of Martin Kireew for informations about projects and more. Feel free to contact any time about projects in web and mobile development."
+        author="Martin Kireew"
+      />
       <Introduction content={introduction} />
       <TimelineContainer timelineElements={timelineElements} />
       <Skills skills={skillElements} />
