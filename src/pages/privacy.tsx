@@ -72,24 +72,9 @@ const Privacy = () => {
             </div>
             <div className="text-orange-900">
               <div className="text-lg font-semibold text-orange-900 my-4">Consent</div>
-              By using our website, you hereby consent to our privacy policy and agree to its terms.
-            </div>
-            <div className="text-orange-900">
-              <div className="text-lg font-semibold text-orange-900 my-4">Update</div>
-              This Privacy Policy was last updated on: Sunday, July 14th, 2019.
-              <a
-                href="http://www.PrivacyPolicyOnline.com"
-                title="PrivacyPolicyOnline.com Approved Site"
-                target="_blank"
-              >
-                <img
-                  src="http://www.privacypolicyonline.com/images/privacypolicyonline-seal.png"
-                  alt="Privacy Policy Online Approved Site"
-                />
-              </a>
-              <em>
-                Should we update, amend or make any changes to our privacy policy, those changes will be posted here.
-              </em>
+              <div className="text-lg font-semibold text-orange-900 my-4">
+                By using our website, you hereby consent to our privacy policy and agree to its terms.
+              </div>
             </div>
           </div>
         </div>
