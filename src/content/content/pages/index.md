@@ -6,53 +6,55 @@ navigation:
   - name: LinkedIn
     link: https://www.linkedin.com/in/martin-kireew-93912a153/
 introduction:
-  - Hello!
+  - hey!
   - my name is martin. I'm a full stack developer based in berlin.
-  - I'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge
+  - I'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.
   - 'Current side project:'
-  - iOS development with programatic layout. Working on a app
+  - iOS development with programatic layout. Working on an app.
 timelineEvents:
   - id: 1
+    header: 'Frontend Engineer (Full Stack)'
+    subheader: 'Trade Republic'
+    place: 'Berlin'
+    time: 'February 2019 - now'
+    information: 'Javascript, Typescript, Webpack, Vue, Nuxt, Vuex, Kubernetes, Docker'
+    position: 'right'
+  - id: 2
     header: 'Full Stack Developer'
     subheader: 'Schütze Consulting AG'
     place: 'Berlin'
     time: 'August 2018 - January 2019'
     information: 'Javascript, Typescript, Webpack, React, Java, Maven, Docker'
     position: 'left'
-    icon: 'Icon.PROJECT'
-  - id: 2
+  - id: 3
     header: 'Website for immajung'
     subheader: 'Freelancing'
     place: 'Remote'
     time: 'August 2018'
     information: 'Another project with typescript, react, gatsby, netlifyCMS and styled-components.'
     position: 'right'
-    icon: 'Icon.TERMINAL'
-  - id: 3
+  - id: 4
     header: 'Website for Interkultureller Sozialdienst'
     subheader: 'Freelancing'
     place: 'Remote'
     time: 'June 2018'
     information: 'First project with typescript, react, gatsby and styled-components.'
     position: 'left'
-    icon: 'Icon.TERMINAL'
-  - id: 4
+  - id: 5
     header: 'IT Consultant'
     subheader: 'ITP Nord GmbH'
     place: 'Hanover'
     ime: 'February 2018 - July 2018'
     information: "Finanz Informatik GmbH:\n Worked with OSPlus Framework. Developing banking Proof of Concepts.\n Deep dive into market risk management"
     position: 'right'
-    icon: 'Icon.PROJECT'
-  - id: 5
+  - id: 6
     header: 'App for Testing Department (automotive industry)'
     subheader: 'Freelancing'
     place: 'Remote'
     time: 'March 2017'
     information: 'Developing an app to support quality testing by spoken commands.'
     position: 'left'
-    icon: 'Icon.TERMINAL'
-  - id: 6
+  - id: 7
     header: 'Junior IT Consultant'
     subheader: 'ITP Nord GmbH'
     place: 'Different'
@@ -65,15 +67,13 @@ timelineEvents:
       Remote: \n
       Developing a Proof of Concept (Historical Simulation)"
     position: 'right'
-    icon: 'Icon.PROJECT'
-  - id: 7
+  - id: 8
     header: "Bachelor's Degree"
     subheader: 'University of Hildesheim / Finanz Informatik GmbH'
     place: 'Hanover'
     time: 'October 2016 - January 2017'
-    information: "Writing my bachelor's degree at Finanz Informatik GmbH about conception. Designing a new feature in the cms of the Sparkasse."
+    information: "Writing my bachelor's thesis at Finanz Informatik GmbH about conception. Designing a new feature in the cms of the Sparkasse."
     position: 'left'
-    icon: 'Icon.EDUCATION'
 skills:
   - name: 'Typescript'
     description: 'the better javascript'

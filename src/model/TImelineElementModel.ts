@@ -12,7 +12,6 @@ export interface TimelineElementModelProps {
   time: string
   information: string
   position: string
-  icon: string
 }
 
 export default class TimelineElementModel {
@@ -23,16 +22,14 @@ export default class TimelineElementModel {
   private _time: string
   private _information: string
   private _position: number
-  private _icon: string
 
-  constructor({ id, header, subheader, place, time, information, position, icon }: TimelineElementModelProps) {
+  constructor({ id, header, subheader, place, time, information, position }: TimelineElementModelProps) {
     this._id = id
     this._header = header
     this._subheader = subheader
     this._place = place
     this._time = time
     this._information = information
-    this._icon = icon
 
     if (position === 'left') {
       this._position = 1
@@ -82,11 +79,5 @@ export default class TimelineElementModel {
   }
   public set position(value: number) {
     this._position = value
-  }
-  public get icon(): string {
-    return this._icon
-  }
-  public set icon(value: string) {
-    this._icon = value
   }
 }
