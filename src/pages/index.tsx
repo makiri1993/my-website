@@ -60,7 +60,6 @@ export const query = graphql`
           information
           time
           position
-          icon
         }
         skills {
           name
