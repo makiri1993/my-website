@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 
 interface NavData {
   siteData: {
@@ -27,11 +27,21 @@ const Nav = () => (
       const { navigation } = siteData.frontmatter
       return (
         <nav className="bg-orange-900 flex justify-center">
-          {navigation.map(({ name, link }, index) => (
-            <a key={index} className="py-3 text-indigo-100 mr-4" href={link}>
-              {name}
-            </a>
-          ))}
+          {navigation.map(({ name, link }, index) => {
+            if (link.includes('http')) {
+              return (
+                <a key={index} className="py-3 text-indigo-100 mx-4 xl:mx-10" href={link}>
+                  {name}
+                </a>
+              )
+            } else {
+              return (
+                <Link key={index} className="py-3 text-indigo-100 mx-4 xl:mx-10" to={link}>
+                  {name}
+                </Link>
+              )
+            }
+          })}
         </nav>
       )
     }}

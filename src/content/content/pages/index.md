@@ -1,6 +1,8 @@
 ---
 pageKey: page_index
 navigation:
+  - name: home
+    link: /
   - name: github
     link: https://github.com/makiri1993
   - name: LinkedIn
