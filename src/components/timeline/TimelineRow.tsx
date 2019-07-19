@@ -4,10 +4,11 @@ import TimelineElement from './TimelineElement'
 import { useBreakpoint, useScrolling } from '../../hooks/resize-hooks'
 
 interface TimelineRowProps {
+  side: number
   timelineElement: TimelineElementModel
 }
 
-const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
+const TimelineRow = ({ timelineElement, side }: TimelineRowProps) => {
   const breakPointForTimeline = 415
   const isMobile = useBreakpoint(breakPointForTimeline)
   const renderLeft = () => {
@@ -47,7 +48,7 @@ const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
   if (isMobile) {
     return renderLeft()
   } else {
-    return timelineElement.position === 1 ? renderLeft() : renderRight()
+    return side % 2 === 0 ? renderLeft() : renderRight()
   }
 }
 

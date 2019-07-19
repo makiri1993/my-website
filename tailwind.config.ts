@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    // @ts-ignore
     function({ addUtilities }) {
       const newUtilities = {
         '.transition-all': {

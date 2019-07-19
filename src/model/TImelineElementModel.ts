@@ -5,7 +5,6 @@ export interface TimelineElementModelProps {
   place: string
   time: string
   information: string
-  position: string
 }
 
 export default class TimelineElementModel {
@@ -15,21 +14,14 @@ export default class TimelineElementModel {
   private _place: string
   private _time: string
   private _information: string
-  private _position: number
 
-  constructor({ id, header, subheader, place, time, information, position }: TimelineElementModelProps) {
+  constructor({ id, header, subheader, place, time, information }: TimelineElementModelProps) {
     this._id = id
     this._header = header
     this._subheader = subheader
     this._place = place
     this._time = time
     this._information = information
-
-    if (position === 'left') {
-      this._position = 1
-    } else {
-      this._position = 3
-    }
   }
 
   public get id(): number {
@@ -67,11 +59,5 @@ export default class TimelineElementModel {
   }
   public set information(value: string) {
     this._information = value
-  }
-  public get position(): number {
-    return this._position
-  }
-  public set position(value: number) {
-    this._position = value
   }
 }

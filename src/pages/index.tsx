@@ -62,7 +62,6 @@ export const query = graphql`
           place
           information
           time
-          position
         }
         skills {
           name
