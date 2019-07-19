@@ -15,7 +15,7 @@ interface TimelinePostProps {
 const TimelinePost = ({ data: { timelinePost } }: TimelinePostProps): ReactNode => {
   const { frontmatter, html } = timelinePost
   const timelineElement = new TimelineElementModel({ fields: {}, frontmatter })
-  const { header, subheader, time, place, information } = timelineElement
+  const { header, subheader, time, place } = timelineElement
   return (
     <Layout>
       <div className="container py-4 px-6 xl:py-32 text-orange-900 min-h-screen">
