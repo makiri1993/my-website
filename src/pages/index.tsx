@@ -5,24 +5,27 @@ import Layout from '../components/layout/main/layout'
 import Skills from '../components/skills/Skills'
 import TimelineContainer from '../components/timeline/TimelineContainer'
 import SEO from '../components/util/seo/Seo'
-import SkillModel, { SkillModelProps } from '../model/SkillModel'
-import TimelineElementModel, { TimelineElementModelProps } from '../model/TImelineElementModel'
+import { parseToSkillModel, SkillModelProps } from '../model/SkillModel'
+import { parseToTimelineModels, TimelineElementModelProps } from '../model/TImelineElementModel'
 
 interface IndexProps {
   data: {
     siteData: {
       frontmatter: {
         introduction: string
-        timelineEvents: TimelineElementModelProps[]
         skills: SkillModelProps[]
       }
+    }
+    timelineEvents: {
+      nodes: TimelineElementModelProps[]
     }
   }
 }
 
-const IndexPage = ({ data }: IndexProps) => {
-  const { introduction, timelineEvents, skills } = data.siteData.frontmatter
-  const timelineElements = parseToTimelineModel(timelineEvents)
+const IndexPage = ({ data: { siteData, timelineEvents } }: IndexProps) => {
+  const { introduction, skills } = siteData.frontmatter
+  const { nodes } = timelineEvents
+  const timelineElements = parseToTimelineModels(nodes)
   const skillElements = parseToSkillModel(skills)
 
   return (
@@ -40,14 +43,6 @@ const IndexPage = ({ data }: IndexProps) => {
   )
 }
 
-function parseToTimelineModel(timelineEvents: TimelineElementModelProps[]): TimelineElementModel[] {
-  return timelineEvents.map(event => new TimelineElementModel(event))
-}
-
-function parseToSkillModel(skills: SkillModelProps[]): SkillModel[] {
-  return skills.map(skill => new SkillModel(skill))
-}
-
 export default IndexPage
 
 export const query = graphql`
@@ -55,17 +50,27 @@ export const query = graphql`
     siteData: markdownRemark(frontmatter: { pageKey: { eq: "page_index" } }) {
       frontmatter {
         introduction
-        timelineEvents {
-          id
-          header
-          subheader
-          place
-          information
-          time
-        }
         skills {
           name
           description
+        }
+      }
+    }
+    timelineEvents: allMarkdownRemark(
+      filter: { fields: { slug: { regex: "/timeline/" } } }
+      sort: { fields: frontmatter___id, order: ASC }
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          id
+          header
+          subheader
+          time
+          place
+          information
         }
       }
     }

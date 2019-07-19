@@ -1,4 +1,4 @@
-export interface TimelineElementModelProps {
+export interface TimelineFrontmatterProps {
   id: number
   header: string
   subheader: string
@@ -6,8 +6,15 @@ export interface TimelineElementModelProps {
   time: string
   information: string
 }
+export interface TimelineElementModelProps {
+  fields: {
+    slug?: string
+  }
+  frontmatter: TimelineFrontmatterProps
+}
 
 export default class TimelineElementModel {
+  private _slug: string
   private _id: number
   private _header: string
   private _subheader: string
@@ -15,13 +22,21 @@ export default class TimelineElementModel {
   private _time: string
   private _information: string
 
-  constructor({ id, header, subheader, place, time, information }: TimelineElementModelProps) {
+  public constructor({
+    fields: { slug = '' },
+    frontmatter: { id, header, subheader, place, time, information },
+  }: TimelineElementModelProps) {
+    this._slug = slug
     this._id = id
     this._header = header
     this._subheader = subheader
     this._place = place
     this._time = time
     this._information = information
+  }
+
+  public get slug(): string {
+    return this._slug
   }
 
   public get id(): number {
@@ -60,4 +75,8 @@ export default class TimelineElementModel {
   public set information(value: string) {
     this._information = value
   }
+}
+
+export function parseToTimelineModels(timelineEvents: TimelineElementModelProps[]): TimelineElementModel[] {
+  return timelineEvents.map(event => new TimelineElementModel(event))
 }

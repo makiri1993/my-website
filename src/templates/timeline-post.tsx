@@ -1,12 +1,48 @@
-import React from 'react'
+import { graphql } from 'gatsby'
+import React, { ReactNode } from 'react'
 import Layout from '../components/layout/main/layout'
+import TimelineElementModel, { TimelineFrontmatterProps } from '../model/TImelineElementModel'
 
-const TimelinePost = () => {
+interface TimelinePostProps {
+  data: {
+    timelinePost: {
+      frontmatter: TimelineFrontmatterProps
+      html: string
+    }
+  }
+}
+
+const TimelinePost = ({ data: { timelinePost } }: TimelinePostProps): ReactNode => {
+  const { frontmatter, html } = timelinePost
+  const timelineElement = new TimelineElementModel({ fields: {}, frontmatter })
+  const { header, subheader, time, place, information } = timelineElement
   return (
     <Layout>
-      <div>hell world</div>
+      <div className="container py-4 px-6 xl:py-32 text-orange-900 min-h-screen">
+        <div className="uppercase text-lg font-bold mb-4">{header}</div>
+        <div className="font-semibold mb-3">{subheader}</div>
+        <div className="mb-2">{time}</div>
+        <div className="mb-2">{place}</div>
+        {/* <div>{information}</div> */}
+        <div className="mt-10 xl:mt-32 whitespace-pre-line" dangerouslySetInnerHTML={{ __html: html }} />
+      </div>
     </Layout>
   )
 }
 
 export default TimelinePost
+
+export const pageQuery = graphql`
+  query TimelinePostBySlug($slug: String!) {
+    timelinePost: markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        header
+        subheader
+        place
+        time
+        information
+      }
+      html
+    }
+  }
+`
