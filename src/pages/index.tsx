@@ -12,7 +12,7 @@ interface IndexProps {
   data: {
     siteData: {
       frontmatter: {
-        introduction: string[]
+        introduction: string
         timelineEvents: TimelineElementModelProps[]
         skills: SkillModelProps[]
       }

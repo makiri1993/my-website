@@ -1,20 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useBreakpoint } from '../../hooks/resize-hooks'
 
 interface IntroductionProps {
-  content: string[]
+  content: string
 }
 
 const Introduction = ({ content }: IntroductionProps) => {
+  console.log('TCL: Introduction -> content', content)
   const isMobile = useBreakpoint(415)
   return (
     <div className="container h-screen ">
       <div className="flex flex-col px-6 justify-center h-full">
-        {content.map((info, index) => (
-          <p key={index} className="uppercase mb-4 md:max-w-3xl text-orange-900">
-            {info}
-          </p>
-        ))}
+        <p className="uppercase mb-4 md:max-w-3xl text-orange-900 whitespace-pre-line">
+          {content.split('').map((letter, index) => (
+            <TypedLetter key={index} letter={letter} timeout={index} />
+          ))}
+        </p>
         <button
           onClick={() => {
             scrollTo({
@@ -29,6 +30,15 @@ const Introduction = ({ content }: IntroductionProps) => {
       </div>
     </div>
   )
+}
+
+const TypedLetter = ({ letter, timeout }: { letter: string; timeout: number }) => {
+  const [shownLetter, setShownLetter] = useState(false)
+  useEffect(() => {
+    setTimeout(() => setShownLetter(true), 40 * timeout)
+  })
+
+  return <span className={`${shownLetter ? 'opacity-100' : 'opacity-0'}`}>{letter}</span>
 }
 
 export default Introduction

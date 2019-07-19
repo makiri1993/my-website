@@ -7,12 +7,7 @@ navigation:
     link: https://github.com/makiri1993
   - name: LinkedIn
     link: https://www.linkedin.com/in/martin-kireew-93912a153/
-introduction:
-  - hey!
-  - my name is martin. I'm a full stack developer based in berlin.
-  - I'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.
-  - 'Current side project:'
-  - iOS development with programatic layout. Working on an app.
+introduction: "hey!\n\nmy name is martin.\n\nI'm a full stack developer based in berlin.\n\nI'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.\n\nCurrent side project:\niOS development with programatic layout. Working on an app.\n\nClick on the button below to see my cv!"
 timelineEvents:
   - id: 1
     header: 'Frontend Engineer (Full Stack)'
