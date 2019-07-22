@@ -19,12 +19,14 @@ const TimelinePost = ({ data: { timelinePost } }: TimelinePostProps): ReactNode 
   return (
     <Layout>
       <div className="container py-4 px-6 xl:py-32 text-orange-900 min-h-screen">
-        <div className="uppercase text-lg font-bold mb-4">{header}</div>
-        <div className="font-semibold mb-3">{subheader}</div>
-        <div className="mb-2">{time}</div>
-        <div className="mb-2">{place}</div>
+        <div className="md:w-3/4 border-b-2 border-orange-900 md:pb-4">
+          <div className="uppercase text-lg font-bold mb-4">{header}</div>
+          <div className="font-semibold mb-3">{subheader}</div>
+          <div className="mb-2">{time}</div>
+          <div className="mb-2">{place}</div>
+        </div>
         {/* <div>{information}</div> */}
-        <div className="mt-10 xl:mt-32 whitespace-pre-line" dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="mt-10 xl:mt-32 md:w-6/12 whitespace-pre-line" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   )
