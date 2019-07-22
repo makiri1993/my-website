@@ -7,7 +7,7 @@ export default class SkillModel {
   private _name: string
   private _description: string
 
-  constructor({ name, description }: SkillModelProps) {
+  public constructor({ name, description }: SkillModelProps) {
     this._name = name
     this._description = description
   }
@@ -24,4 +24,8 @@ export default class SkillModel {
   public set description(value: string) {
     this._description = value
   }
+}
+
+export function parseToSkillModel(skills: SkillModelProps[]): SkillModel[] {
+  return skills.map(skill => new SkillModel(skill))
 }

@@ -1,6 +1,18 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const theme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   plugins: [
-    function({ addUtilities }) {
+    // @ts-ignore
+    function({ addUtilities, addBase }) {
+      const newBaseStyles = {
+        ul: {
+          'list-style': 'inside',
+        },
+        li: {
+          paddingLeft: theme.spacing[4],
+        },
+      }
       const newUtilities = {
         '.transition-all': {
           transition: 'all 250ms ease-in-out',
@@ -10,6 +22,7 @@ module.exports = {
         },
       }
       addUtilities(newUtilities, ['responsive', 'hover'])
+      addBase(newBaseStyles)
     },
   ],
   theme: {

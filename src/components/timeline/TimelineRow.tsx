@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import TimelineElementModel from '../../model/TImelineElementModel'
 import TimelineElement from './TimelineElement'
 import { useBreakpoint, useScrolling } from '../../hooks/resize-hooks'
 
 interface TimelineRowProps {
+  side: number
   timelineElement: TimelineElementModel
 }
 
-const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
+const TimelineRow = ({ timelineElement, side }: TimelineRowProps): ReactNode => {
   const breakPointForTimeline = 415
   const isMobile = useBreakpoint(breakPointForTimeline)
-  const renderLeft = () => {
+  const renderLeft = (): ReactNode => {
     if (isMobile) {
       return (
         <div className="flex">
@@ -33,7 +34,7 @@ const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
     }
   }
 
-  const renderRight = () => {
+  const renderRight = (): ReactNode => {
     return (
       <div className="flex">
         <div className="w-5/12"></div>
@@ -47,11 +48,11 @@ const TimelineRow = ({ timelineElement }: TimelineRowProps) => {
   if (isMobile) {
     return renderLeft()
   } else {
-    return timelineElement.position === 1 ? renderLeft() : renderRight()
+    return side % 2 === 0 ? renderLeft() : renderRight()
   }
 }
 
-const VerticalSeparator = () => {
+const VerticalSeparator = (): ReactNode => {
   const { ref, visible } = useScrolling<HTMLDivElement>()
 
   return (
