@@ -35,9 +35,11 @@ const Introduction = ({ content }: IntroductionProps) => {
 
 const TypedLetter = ({ letter, timeout }: { letter: string; timeout: number }) => {
   const [shownLetter, setShownLetter] = useState(false)
+  let timer: NodeJS.Timeout
   useEffect(() => {
-    setTimeout((): void => setShownLetter(true), 40 * timeout)
+    timer = setTimeout((): void => setShownLetter(true), 40 * timeout)
   })
+  useEffect(() => () => clearTimeout(timer))
 
   return <span className={`${shownLetter ? 'opacity-100' : 'opacity-0'}`}>{letter}</span>
 }

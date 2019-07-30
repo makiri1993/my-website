@@ -58,7 +58,7 @@ export const query = graphql`
     }
     timelineEvents: allMarkdownRemark(
       filter: { fields: { slug: { regex: "/timeline/" } } }
-      sort: { fields: frontmatter___id, order: ASC }
+      sort: { fields: frontmatter___id, order: DESC }
     ) {
       nodes {
         fields {

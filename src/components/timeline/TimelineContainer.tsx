@@ -11,7 +11,7 @@ const TimelineContainer = ({ timelineElements }: TimelineProps) => {
     <div className="bg-orange-900">
       <div className="container flex flex-col px-6 py-24 ">
         {timelineElements.map((el, index) => (
-          <TimelineRow key={index} side={index} timelineElement={el}></TimelineRow>
+          <TimelineRow key={index} side={index} timelineElement={el} />
         ))}
       </div>
     </div>

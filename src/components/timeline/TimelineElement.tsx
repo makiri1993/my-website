@@ -1,12 +1,12 @@
 import { Link } from 'gatsby'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { useScrolling } from '../../hooks/resize-hooks'
 import TimelineElementModel from '../../model/TImelineElementModel'
 
 interface TimelineElementProps {
   timelineData: TimelineElementModel
 }
-const TimelineElement = ({ timelineData }: TimelineElementProps): ReactNode => {
+const TimelineElement = ({ timelineData }: TimelineElementProps) => {
   const { ref, visible } = useScrolling<HTMLDivElement>()
   const { slug, header, subheader, information, place, time } = timelineData
   return (
