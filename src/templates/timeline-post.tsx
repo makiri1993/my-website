@@ -27,7 +27,7 @@ const TimelinePost = ({ data: { timelinePost } }: TimelinePostProps): ReactNode 
         </div>
         {/* <div>{information}</div> */}
         <div
-          className="mt-10 xl:mt-32 md:w-6/12 whitespace-pre-line leading-tight"
+          className="mt-10 xl:mt-32 md:w-6/12 whitespace-pre-line leading-snug"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
