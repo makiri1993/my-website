@@ -10,21 +10,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
+        postCssPlugins: [require('tailwindcss')('./tailwind.config.ts')],
       },
     },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
     //     name: `images`,
-    //     path: `${__dirname}/src/content/images`,
+    //     path: `${__dirname}/content/images`,
     //   },
     // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/content/content`,
+        path: `${__dirname}/content/content`,
       },
     },
     {

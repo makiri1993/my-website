@@ -3,6 +3,10 @@ import { useEffect, useState, RefObject, useRef } from 'react'
 export function useBreakpoint(breakpoint: number) {
   const [isMobile, setMobile] = useState(false)
 
+  const handleResize = () => {
+    window.innerWidth > breakpoint ? setMobile(false) : setMobile(true)
+  }
+
   useEffect(() => {
     window.addEventListener('resize', handleResize)
     setMobile(!(window.innerWidth > breakpoint))
@@ -11,9 +15,6 @@ export function useBreakpoint(breakpoint: number) {
     window.removeEventListener('resize', handleResize)
   })
 
-  const handleResize = () => {
-    window.innerWidth > breakpoint ? setMobile(false) : setMobile(true)
-  }
   return isMobile
 }
 
@@ -21,10 +22,7 @@ export function useScrolling<T extends HTMLElement>(): { ref: RefObject<T>; visi
   const ref = useRef<T>(null)
   const [visible, setVisible] = useState(false)
 
-  useEffect(() => document.addEventListener('scroll', handleScroll))
-  useEffect(() => () => document.addEventListener('scroll', handleScroll))
-
-  const handleScroll = (event: any) => {
+  const handleScroll = () => {
     if (ref.current) {
       const { offsetTop } = ref.current
       const { scrollY, innerHeight } = window
@@ -35,5 +33,12 @@ export function useScrolling<T extends HTMLElement>(): { ref: RefObject<T>; visi
       }
     }
   }
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll)
+    handleScroll()
+  })
+  useEffect(() => () => document.removeEventListener('scroll', handleScroll))
+
   return { ref, visible }
 }

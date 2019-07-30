@@ -26,7 +26,7 @@ const Nav = () => (
     render={({ siteData }: NavData) => {
       const { navigation } = siteData.frontmatter
       return (
-        <nav className="bg-orange-900 flex justify-center">
+        <nav className="sticky top-0 bg-orange-900 flex justify-center">
           {navigation.map(({ name, link }, index) => {
             if (link.includes('http')) {
               return (
