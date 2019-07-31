@@ -6,6 +6,20 @@ module.exports = {
     // @ts-ignore
     function({ addUtilities, addBase }) {
       const newBaseStyles = {
+        h1: { fontSize: theme.fontSize['2xl'], fontWeight: theme.fontWeight.bold, marginBottom: theme.spacing[4] },
+        h2: {
+          fontSize: theme.fontSize.xl,
+          fontWeight: theme.fontWeight.bold,
+          marginBottom: theme.spacing[4],
+        },
+        h3: {
+          fontSize: theme.fontSize.lg,
+          fontWeight: theme.fontWeight.bold,
+          marginBottom: theme.spacing[4],
+          textDecoration: 'underline',
+        },
+        h4: { fontWeight: theme.fontWeight.bold, marginBottom: theme.spacing[4] },
+        p: { marginBottom: theme.spacing[4] },
         ul: {
           'list-style': 'inside',
         },
