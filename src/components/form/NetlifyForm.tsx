@@ -34,6 +34,7 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
     } catch (error) {
       error('data not send, error')
     }
+    console.log('TCL: handleSubmit -> data', data)
     closeMethod()
   }
 
