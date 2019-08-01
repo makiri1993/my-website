@@ -46,8 +46,6 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
-      {/* You still need to add the hidden input with the form name to your JSX form */}
-      <input type="hidden" name="form-name" value={formName} />
       <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
       <FormGroup id={emailId} label={emailLabel} value={email} changeFunction={setEmail} type="email" />
       <FormGroup id={numberId} label={numberLabel} value={number} changeFunction={setNumber} type="tel" />
