@@ -102,7 +102,6 @@ const FormInput = ({
 }) => {
   return (
     <input
-      id={id}
       name={id}
       className="mb-4 bg-indigo-100 border border-orange-900 w-full"
       type={type}
