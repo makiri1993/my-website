@@ -1,12 +1,17 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useState, FormEvent } from 'react'
 
-const encode = (data: any) => {
+const encode = (data: { [key: string]: string }) => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
+export interface NetlifyFormProps {
+  closeMethod: () => void
+}
 
-const NetlifyForm = () => {
+const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
+  const formName = 'my-website'
+
   const nameId = 'input-name'
   const nameLabel = 'Your name'
   const [name, setName] = useState('')
@@ -17,37 +22,37 @@ const NetlifyForm = () => {
   const numberLabel = 'Your number'
   const [number, setNumber] = useState('')
 
-  const handleSubmit = (e: any) => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'test', name, email, number }),
-    })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error))
-
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': formName, name, email, number }),
+      })
+    } catch (error) {
+      error('data not send, error')
+    }
+    closeMethod()
   }
-
-  //   const handleChange = (e: ChangeEvent) => this.setState({ [e.target.name]: e.target.value })
 
   return (
     <form
       className="z-10 w-9/12 bg-indigo-100 rounded p-4 shadow-lg"
-      name="test"
+      name={formName}
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
       {/* You still need to add the hidden input with the form name to your JSX form */}
-      <input type="hidden" name="form-name" value="test" />
+      <input type="hidden" name="form-name" value={formName} />
       <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
       <FormGroup id={emailId} label={emailLabel} value={email} changeFunction={setEmail} type="email" />
-      <FormGroup id={numberId} label={numberLabel} value={number} changeFunction={setNumber} type="phone" />
+      <FormGroup id={numberId} label={numberLabel} value={number} changeFunction={setNumber} type="tel" />
       <div className="flex justify-around">
-        <FormAction label="Cancel" />
-        <FormAction label="Send" submit />
+        <FormAction label="Cancel" clickMethod={closeMethod} />
+        <FormAction label="Send" submit clickMethod={() => console.log('data was sent!')} />
       </div>
     </form>
   )
@@ -107,9 +112,9 @@ const FormInput = ({
   )
 }
 
-const FormAction = ({ label, submit, clickMethod }: { label: string; submit?: boolean; clickMethod?: () => void }) => {
+const FormAction = ({ label, submit, clickMethod }: { label: string; submit?: boolean; clickMethod: () => void }) => {
   return (
-    <button type={submit ? 'submit' : 'button'} className="text-orange-900 ">
+    <button type={submit ? 'submit' : 'button'} className="text-orange-900" onClick={() => clickMethod()}>
       {label}
     </button>
   )

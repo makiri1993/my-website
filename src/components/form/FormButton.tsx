@@ -17,7 +17,7 @@ const FormButton = () => {
           showForm ? 'flex' : 'hidden'
         } flex-col justify-center items-center fixed top-0 left-0 right-0 bottom-0`}
       >
-        <NetlifyForm />
+        <NetlifyForm closeMethod={() => setShowForm(false)} />
         <div className="z-5 absolute w-full h-full bg-gray-500 opacity-50" />
       </div>
     </>
