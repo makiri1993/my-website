@@ -24,11 +24,12 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    const data = { nameId: name, emailId: email, numberId: number }
     try {
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': formName, name, email, number }),
+        body: encode({ 'form-name': formName, ...data }),
       })
     } catch (error) {
       error('data not send, error')
@@ -103,6 +104,7 @@ const FormInput = ({
   return (
     <input
       id={id}
+      name={id}
       className="mb-4 bg-indigo-100 border border-orange-900 w-full"
       type={type}
       value={value}
