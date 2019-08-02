@@ -11,7 +11,7 @@ export interface NetlifyFormProps {
 }
 
 const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
-  const formName = 'my-website-2'
+  const formName = 'my-web'
 
   const nameId = 'name'
   const nameLabel = 'My name is'
