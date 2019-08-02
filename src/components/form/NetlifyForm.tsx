@@ -24,7 +24,7 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    const data = { nameId: name, emailId: email, numberId: number }
+    const data = { name, email, number }
     try {
       await fetch('/', {
         method: 'POST',
