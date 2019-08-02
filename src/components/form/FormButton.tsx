@@ -7,7 +7,7 @@ const FormButton = () => {
     <>
       <button
         className="fixed bg-orange-400 shadow-lg text-indigo-100 rounded-full h-24 w-24"
-        style={{ top: '8%', right: '4%' }}
+        style={{ top: '8%', right: '6%' }}
         onClick={() => setShowForm(!showForm)}
       >
         Contact!
@@ -18,7 +18,7 @@ const FormButton = () => {
         } flex-col justify-center items-center fixed top-0 left-0 right-0 bottom-0`}
       >
         <NetlifyForm closeMethod={() => setShowForm(false)} />
-        <div className="z-5 absolute w-full h-full bg-gray-500 opacity-50" />
+        <div onClick={() => setShowForm(false)} className="z-5 absolute w-screen h-full bg-gray-500 opacity-50" />
       </div>
     </>
   )
