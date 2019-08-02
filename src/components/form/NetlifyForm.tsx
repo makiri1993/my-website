@@ -1,7 +1,7 @@
 import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react'
 import { Link } from 'gatsby'
 
-const encode = (data: { [key: string]: string }) => {
+const encode = (data: { [key: string]: string | boolean }) => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
@@ -31,17 +31,22 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    const data = { name, email, number }
+    const data = { name, email, number, project, agreement }
     try {
       await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': formName, ...data }),
       })
+      setName('')
+      setEmail('')
+      setNumber('')
+      setAgreement(false)
+      setProject('')
     } catch (error) {
       error('data not send, error')
     }
-    console.log('TCL: handleSubmit -> data', data)
+
     closeMethod()
   }
 
