@@ -12,13 +12,13 @@ export interface NetlifyFormProps {
 const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
   const formName = 'my-website'
 
-  const nameId = 'input-name'
+  const nameId = 'name'
   const nameLabel = 'Your name'
   const [name, setName] = useState('')
-  const emailId = 'input-email'
+  const emailId = 'email'
   const emailLabel = 'Your email'
   const [email, setEmail] = useState('')
-  const numberId = 'input-number'
+  const numberId = 'number'
   const numberLabel = 'Your number'
   const [number, setNumber] = useState('')
 
