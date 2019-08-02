@@ -55,7 +55,8 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
       className="z-10 w-9/12 lg:w-6/12 bg-indigo-100 rounded p-4 md:pb-16 shadow-lg"
       onSubmit={handleSubmit}
       name={formName}
-      netlify-honeypot="bot-field"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
     >
       <h1 className="text-orange-900 md:mb-10">Feel free to contact me about any project!</h1>
       <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
