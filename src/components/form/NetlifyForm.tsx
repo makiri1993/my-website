@@ -51,7 +51,7 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
   }
 
   return (
-    <form className="z-10 w-9/12 bg-indigo-100 rounded p-4 md:pb-16 shadow-lg" onSubmit={handleSubmit}>
+    <form className="z-10 w-9/12 lg:w-6/12 bg-indigo-100 rounded p-4 md:pb-16 shadow-lg" onSubmit={handleSubmit}>
       <h1 className="text-orange-900 md:mb-10">Feel free to contact me about any project!</h1>
       <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
       <FormGroup required id={emailId} label={emailLabel} value={email} changeFunction={setEmail} type="email" />
