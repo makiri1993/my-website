@@ -28,6 +28,16 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
   const projectId = 'project'
   const projectLabel = 'I want to talk about'
   const [project, setProject] = useState('')
+  const initialButtonText = 'Send'
+  const [sendButton, setSendButton] = useState(initialButtonText)
+
+  const showResult = (success: boolean) => {
+    if (success) {
+      setSendButton('Successfully sent!')
+    } else {
+      setSendButton('Please try it later again!')
+    }
+  }
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -38,44 +48,44 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': formName, ...data }),
       })
+      showResult(true)
       setName('')
       setEmail('')
       setNumber('')
       setAgreement(false)
       setProject('')
     } catch (error) {
+      showResult(false)
       error('data not send, error')
     }
-
-    closeMethod()
+    setTimeout(() => {
+      closeMethod()
+      setSendButton(initialButtonText)
+    }, 2000)
   }
 
   return (
-    <form
-      className="z-10 w-9/12 lg:w-6/12 bg-indigo-100 rounded p-4 md:pb-16 shadow-lg"
-      onSubmit={handleSubmit}
-      name={formName}
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <h1 className="text-orange-900 md:mb-10">Feel free to contact me about any project!</h1>
-      <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
-      <FormGroup required id={emailId} label={emailLabel} value={email} changeFunction={setEmail} type="email" />
-      <FormGroup id={numberId} label={numberLabel} value={number} changeFunction={setNumber} type="tel" />
-      <FormGroup id={projectId} label={projectLabel} value={project} changeFunction={setProject} type="text" />
-      <FormGroup
-        id={agreementId}
-        required
-        label={agreementLabel}
-        value={agreement}
-        changeFunction={setAgreement}
-        type="checkbox"
-      />
-      <div className="flex justify-around md:mt-10">
-        <FormAction label="Cancel" clickMethod={closeMethod} />
-        <FormAction label="Send" submit clickMethod={() => console.log('data was sent!')} />
-      </div>
-    </form>
+    <div className="z-10 w-11/12 lg:w-6/12 bg-indigo-100 rounded p-4 md:pb-16 shadow-lg">
+      <form className="" onSubmit={handleSubmit} name={formName} data-netlify="true" data-netlify-honeypot="bot-field">
+        <h1 className="text-orange-900 md:mb-10">Feel free to contact me about any project!</h1>
+        <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
+        <FormGroup required id={emailId} label={emailLabel} value={email} changeFunction={setEmail} type="email" />
+        <FormGroup id={numberId} label={numberLabel} value={number} changeFunction={setNumber} type="tel" />
+        <FormGroup id={projectId} label={projectLabel} value={project} changeFunction={setProject} type="text" />
+        <FormGroup
+          id={agreementId}
+          required
+          label={agreementLabel}
+          value={agreement}
+          changeFunction={setAgreement}
+          type="checkbox"
+        />
+        <div className="flex justify-around md:mt-10">
+          <FormAction label="Cancel" clickMethod={closeMethod} />
+          <FormAction label={sendButton} submit />
+        </div>
+      </form>
+    </div>
   )
 }
 
@@ -189,9 +199,13 @@ const FormCheckbox = ({
   )
 }
 
-const FormAction = ({ label, submit, clickMethod }: { label: string; submit?: boolean; clickMethod: () => void }) => {
+const FormAction = ({ label, submit, clickMethod }: { label: string; submit?: boolean; clickMethod?: () => void }) => {
   return (
-    <button type={submit ? 'submit' : 'button'} className="text-orange-900" onClick={() => clickMethod()}>
+    <button
+      type={submit ? 'submit' : 'button'}
+      className="w-1/2 text-orange-900"
+      onClick={clickMethod ? () => clickMethod() : undefined}
+    >
       {label}
     </button>
   )
