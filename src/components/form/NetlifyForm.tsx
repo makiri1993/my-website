@@ -20,7 +20,7 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
   const emailLabel = 'My email is'
   const [email, setEmail] = useState('')
   const numberId = 'number'
-  const numberLabel = 'Your number'
+  const numberLabel = 'My number is'
   const [number, setNumber] = useState('')
   const agreementId = 'agreement'
   const agreementLabel = 'Check the checkbox'
