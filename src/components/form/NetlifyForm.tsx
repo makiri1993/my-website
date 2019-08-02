@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, FormEvent } from 'react'
+import React, { ChangeEvent, useState, FormEvent, ReactNode } from 'react'
 
 const encode = (data: { [key: string]: string }) => {
   return Object.keys(data)
@@ -73,16 +73,17 @@ const FormGroup = ({
 }) => {
   return (
     <div className="flex flex-col w-full">
-      <FormLabel id={id} label={label} />
-      <FormInput id={id} placeholder={label} type={type} value={value} changeFunction={changeFunction} />
+      <FormLabel id={id} label={label}>
+        <FormInput id={id} placeholder={label} type={type} value={value} changeFunction={changeFunction} />
+      </FormLabel>
     </div>
   )
 }
 
-const FormLabel = ({ id, label }: { id: string; label: string }) => {
+const FormLabel = ({ children, id, label }: { children: ReactNode; id: string; label: string }) => {
   return (
     <label className="text-orange-900 mb-2" htmlFor={id}>
-      {label}
+      {label} {children}
     </label>
   )
 }
