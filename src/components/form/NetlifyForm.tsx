@@ -11,7 +11,7 @@ export interface NetlifyFormProps {
 }
 
 const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
-  const formName = 'my-website'
+  const formName = 'my-website-2'
 
   const nameId = 'name'
   const nameLabel = 'My name is'
@@ -177,7 +177,7 @@ const FormCheckbox = ({
         // // placeholder={placeholder}
       />
       <div className="text-orange-900 text-xs">
-        I&lsquo;m agreeing with the <Link to="privacy">Privacy Policy</Link>
+        I&lsquo;m agreeing with the <Link to="/privacy">Privacy Policy</Link>
       </div>
     </div>
   )
