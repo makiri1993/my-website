@@ -39,14 +39,7 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
   }
 
   return (
-    <form
-      className="z-10 w-9/12 bg-indigo-100 rounded p-4 shadow-lg"
-      name={formName}
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-    >
+    <form className="z-10 w-9/12 bg-indigo-100 rounded p-4 shadow-lg" onSubmit={handleSubmit}>
       <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
       <FormGroup id={emailId} label={emailLabel} value={email} changeFunction={setEmail} type="email" />
       <FormGroup id={numberId} label={numberLabel} value={number} changeFunction={setNumber} type="tel" />
