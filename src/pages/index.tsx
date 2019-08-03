@@ -7,6 +7,7 @@ import TimelineContainer from '../components/timeline/TimelineContainer'
 import SEO from '../components/util/seo/Seo'
 import { parseToSkillModel, SkillModelProps } from '../model/SkillModel'
 import { parseToTimelineModels, TimelineElementModelProps } from '../model/TImelineElementModel'
+import FormButton from '../components/form/FormButton'
 
 interface IndexProps {
   data: {
@@ -39,6 +40,7 @@ const IndexPage = ({ data: { siteData, timelineEvents } }: IndexProps) => {
       <Introduction content={introduction} />
       <TimelineContainer timelineElements={timelineElements} />
       <Skills skills={skillElements} />
+      <FormButton />
     </Layout>
   )
 }
