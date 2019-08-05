@@ -1,3 +1,5 @@
 [[redirects]]
   from = "/blog"
   to = "https://blog-immajung.netlify.com/"
+  status = 200
+  force = true
