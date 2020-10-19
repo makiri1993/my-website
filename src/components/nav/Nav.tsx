@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 
 interface NavData {
@@ -9,7 +9,7 @@ interface NavData {
   }
 }
 
-const Nav = () => (
+const Nav: FC = () => (
   <StaticQuery
     query={graphql`
       {
@@ -26,22 +26,24 @@ const Nav = () => (
     render={({ siteData }: NavData) => {
       const { navigation } = siteData.frontmatter
       return (
-        <nav className="sticky top-0 bg-orange-900 flex justify-center">
-          {navigation.map(({ name, link }, index) => {
-            if (link.includes('http')) {
-              return (
-                <a key={index} className="py-3 text-indigo-100 mx-4 xl:mx-10" href={link}>
-                  {name}
-                </a>
-              )
-            } else {
-              return (
-                <Link key={index} className="py-3 text-indigo-100 mx-4 xl:mx-10" to={link}>
-                  {name}
-                </Link>
-              )
-            }
-          })}
+        <nav className="sticky top-0 bg-background-darker flex justify-center">
+          <div className="py-3">
+            {navigation.map(({ name, link }, index) => {
+              if (link.includes('http')) {
+                return (
+                  <a key={index} className="text-primary border-b border-secondary mx-4 xl:mx-10" href={link}>
+                    {name}
+                  </a>
+                )
+              } else {
+                return (
+                  <Link key={index} className="text-primary border-b border-secondary mx-4 xl:mx-10" to={link}>
+                    {name}
+                  </Link>
+                )
+              }
+            })}
+          </div>
         </nav>
       )
     }}

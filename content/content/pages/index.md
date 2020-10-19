@@ -6,8 +6,8 @@ navigation:
   - name: github
     link: https://github.com/makiri1993
   - name: LinkedIn
-    link: https://www.linkedin.com/in/martin-kireew-93912a153/
-introduction: "hey!\n\nmy name is martin.\n\nI'm a full stack developer based in berlin.\n\nI'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.\n\nCurrent side project:\niOS development with programatic layout. Working on an app.\n\nClick on the button below to see my cv!"
+    link: https://de.linkedin.com/in/%F0%9F%92%BB-martin-kireew-93912a153/en-us
+introduction: "hey!\n\nmy name is martin.\n\nI'm a full stack developer based in berlin.\n\nI'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.\n\nCurrent side project:\nSeveral different applications with GO and React Native.\n\nClick on the button below to see my cv!"
 skills:
   - name: 'Typescript'
     description: 'the better javascript'

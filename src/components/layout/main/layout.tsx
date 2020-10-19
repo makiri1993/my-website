@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 import Nav from '../../nav/Nav'
 import './layout.scss'
 import Footer from '../../footer/Footer'
@@ -7,11 +7,11 @@ interface Props {
   children: ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Nav />
-      <main className="bg-indigo-100 h-full">{children}</main>
+      <main className="bg-background h-full">{children}</main>
       <Footer />
     </>
   )

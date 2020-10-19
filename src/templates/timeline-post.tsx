@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import React, { ReactNode } from 'react'
+import React, { FC } from 'react'
 import Layout from '../components/layout/main/layout'
 import TimelineElementModel, { TimelineFrontmatterProps } from '../model/TImelineElementModel'
 
@@ -12,14 +12,14 @@ interface TimelinePostProps {
   }
 }
 
-const TimelinePost = ({ data: { timelinePost } }: TimelinePostProps): ReactNode => {
+const TimelinePost: FC<TimelinePostProps> = ({ data: { timelinePost } }) => {
   const { frontmatter, html } = timelinePost
   const timelineElement = new TimelineElementModel({ fields: {}, frontmatter })
   const { header, subheader, time, place } = timelineElement
   return (
     <Layout>
-      <div className="container py-4 px-6 xl:py-32 text-orange-900 min-h-screen">
-        <div className="md:w-3/4 border-b-2 border-orange-900 md:pb-4">
+      <div className="container py-4 px-6 xl:py-32 text-primary min-h-screen">
+        <div className="md:w-3/4 border-b-2 border-secondary md:pb-4">
           <div className="uppercase text-lg font-bold mb-4">{header}</div>
           <div className="font-semibold mb-3">{subheader}</div>
           <div className="mb-2">{time}</div>

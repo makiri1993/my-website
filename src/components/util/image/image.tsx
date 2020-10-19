@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Img, { FluidObject } from 'gatsby-image'
 
@@ -13,7 +13,7 @@ interface Props {
   className?: string
 }
 
-const Image = ({ imageName, maxWidth = 500, className = '' }: Props) => (
+const Image: FC<Props> = ({ imageName, maxWidth = 500, className = '' }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -29,7 +29,7 @@ const Image = ({ imageName, maxWidth = 500, className = '' }: Props) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const image = data.allImageSharp.edges.find(
         (edge: { node: { fluid: { originalName: string } } }) => edge.node.fluid.originalName === imageName,
       )

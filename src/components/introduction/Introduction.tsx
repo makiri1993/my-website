@@ -1,33 +1,33 @@
-import React, { useState, useEffect, ReactNode } from 'react'
+import React, { useState, useEffect, ReactNode, FC } from 'react'
 import { useBreakpoint } from '../../hooks/resize-hooks'
+import { Button } from '../button/Button'
 
 interface IntroductionProps {
   content: string
 }
 
-const Introduction = ({ content }: IntroductionProps) => {
+const Introduction: FC<IntroductionProps> = ({ content }) => {
   const isMobile = useBreakpoint(415)
+  const handleClick = (): void => {
+    scrollTo({
+      top: window.screen.height * (isMobile ? 1 : 0.8),
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <div className="container h-screen ">
       <div className="flex flex-col px-6 justify-center h-full">
-        <p className="uppercase mb-4 md:max-w-3xl text-orange-900 whitespace-pre-line">
+        <p className="uppercase mb-4 md:max-w-3xl text-primary whitespace-pre-line">
           {content.split('').map(
             (letter, index): ReactNode => (
               <TypedLetter key={index} letter={letter} timeout={index} />
             ),
           )}
         </p>
-        <button
-          onClick={(): void => {
-            scrollTo({
-              top: window.screen.height * (isMobile ? 1 : 0.8),
-              behavior: 'smooth',
-            })
-          }}
-          className="mt-4 p-4 lowercase border-2 rounded bg-orange-400 text-indigo-100 lg:w-4/12 lg:self-start "
-        >
+        <Button onClick={handleClick} className="mt-4 p-4 lowercase lg:w-4/12 lg:self-start ">
           scroll to cv timeline
-        </button>
+        </Button>
       </div>
     </div>
   )

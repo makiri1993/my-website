@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import React from 'react'
+import React, { FC } from 'react'
 import Introduction from '../components/introduction/Introduction'
 import Layout from '../components/layout/main/layout'
 import Skills from '../components/skills/Skills'
@@ -23,7 +23,7 @@ interface IndexProps {
   }
 }
 
-const IndexPage = ({ data: { siteData, timelineEvents } }: IndexProps) => {
+const IndexPage: FC<IndexProps> = ({ data: { siteData, timelineEvents } }) => {
   const { introduction, skills } = siteData.frontmatter
   const { nodes } = timelineEvents
   const timelineElements = parseToTimelineModels(nodes)

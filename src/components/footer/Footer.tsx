@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Link } from 'gatsby'
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
-    <div className="bg-orange-900">
+    <div className="bg-background-darker">
       <div className="container px-6 py-4 flex justify-center">
-        <Link className="text-indigo-100 mx-4" to="/imprint">
+        <Link className="text-primary mx-4" to="/imprint">
           Imprint
         </Link>
-        <Link className="text-indigo-100 mx-4" to="/privacy">
+        <Link className="text-primary mx-4" to="/privacy">
           Privacy
         </Link>
       </div>

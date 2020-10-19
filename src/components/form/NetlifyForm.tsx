@@ -65,9 +65,9 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
   }
 
   return (
-    <div className="z-10 w-11/12 lg:w-6/12 bg-indigo-100 rounded p-4 md:pb-16 shadow-lg">
+    <div className="z-10 w-11/12 lg:w-6/12 bg-primary rounded p-4 md:pb-16 shadow-lg">
       <form className="" onSubmit={handleSubmit} name={formName} data-netlify="true" data-netlify-honeypot="bot-field">
-        <h1 className="text-orange-900 md:mb-10">Feel free to contact me about any project!</h1>
+        <h1 className="text-primary md:mb-10">Feel free to contact me about any project!</h1>
         <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
         <FormGroup required id={emailId} label={emailLabel} value={email} changeFunction={setEmail} type="email" />
         <FormGroup id={numberId} label={numberLabel} value={number} changeFunction={setNumber} type="tel" />
@@ -132,7 +132,7 @@ const FormGroup = ({
 
 const FormLabel = ({ id, label }: { id: string; label: string }) => {
   return (
-    <label className="text-orange-900 md:w-3/12" htmlFor={id}>
+    <label className="text-primary md:w-3/12" htmlFor={id}>
       {label}
     </label>
   )
@@ -156,7 +156,7 @@ const FormInput = ({
   return (
     <input
       name={id}
-      className="bg-indigo-100 border border-orange-900 w-full md:w-9/12"
+      className="bg-primary border border-orange-900 w-full md:w-9/12"
       type={type}
       value={value}
       required={required}
@@ -185,14 +185,14 @@ const FormCheckbox = ({
     <div className="flex items-center mb-4 ">
       <input
         name={id}
-        className="bg-indigo-100 border border-orange-900 mr-2"
+        className="bg-primary border border-orange-900 mr-2"
         type={type}
         checked={value}
         required={required}
         onChange={({ target: { checked } }: ChangeEvent<HTMLInputElement>) => changeFunction(checked)}
         // // placeholder={placeholder}
       />
-      <div className="text-orange-900 text-xs">
+      <div className="text-primary text-xs">
         I&lsquo;m agreeing with the <Link to="/privacy">Privacy Policy</Link>
       </div>
     </div>
@@ -203,7 +203,7 @@ const FormAction = ({ label, submit, clickMethod }: { label: string; submit?: bo
   return (
     <button
       type={submit ? 'submit' : 'button'}
-      className="w-1/2 text-orange-900"
+      className="w-1/2 text-primary"
       onClick={clickMethod ? () => clickMethod() : undefined}
     >
       {label}

@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
+import { Button } from '../button/Button'
 import NetlifyForm from './NetlifyForm'
 
-const FormButton = () => {
+const FormButton: FC = () => {
   const [showForm, setShowForm] = useState(false)
+
+  const handleContactClick = () => setShowForm(!showForm)
+
   return (
     <>
-      <button
-        className="fixed bg-orange-400 shadow-lg text-indigo-100 rounded-full h-24 w-24"
-        style={{ top: '8%', right: '6%' }}
-        onClick={() => setShowForm(!showForm)}
-      >
+      <Button className="fixed h-10 w-24" style={{ top: '8%', right: '6%' }} onClick={handleContactClick}>
         Contact!
-      </button>
+      </Button>
       <div
         className={`${
           showForm ? 'flex' : 'hidden'

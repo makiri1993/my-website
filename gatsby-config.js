@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [require('tailwindcss')('./tailwind.config.ts')],
+        postCssPlugins: [require('tailwindcss')],
       },
     },
     // {
@@ -48,7 +48,7 @@ module.exports = {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
     //     name: `Martin Kireew - Freelancer based in Berlin`,
-    //     short_name: `starter`,
+    //     short_name: `maki - personal website`,
     //     start_url: `/`,
     //     background_color: `#663399`,
     //     theme_color: `#663399`,
