@@ -1,6 +1,6 @@
+import { graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import React, { FC } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import Img, { FluidObject } from 'gatsby-image'
 
 /*
  * - `gatsby-image`: https://gatsby.dev/gatsby-image
@@ -13,7 +13,7 @@ interface Props {
   className?: string
 }
 
-export const Image: FC<Props> = ({ imageName, maxWidth = 500, className = '' }) => (
+export const GatImg: FC<Props> = ({ imageName, maxWidth = 500, className = '' }) => (
   <StaticQuery
     query={graphql`
       query {
