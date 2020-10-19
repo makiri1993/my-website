@@ -1,16 +1,16 @@
-import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react'
+import React, { ChangeEvent, Dispatch, FC, FormEvent, SetStateAction, useState } from 'react'
 import { Link } from 'gatsby'
 
 const encode = (data: { [key: string]: string | boolean }) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 export interface NetlifyFormProps {
   closeMethod: () => void
 }
 
-const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
+const NetlifyForm: FC<NetlifyFormProps> = ({ closeMethod }) => {
   const formName = 'my-web'
 
   const nameId = 'name'
@@ -65,7 +65,7 @@ const NetlifyForm = ({ closeMethod }: NetlifyFormProps) => {
   }
 
   return (
-    <div className="z-10 w-11/12 lg:w-6/12 bg-primary rounded p-4 md:pb-16 shadow-lg">
+    <div className="z-10 w-11/12 lg:w-6/12 bg-background rounded p-4 md:pb-16 shadow-lg">
       <form className="" onSubmit={handleSubmit} name={formName} data-netlify="true" data-netlify-honeypot="bot-field">
         <h1 className="text-primary md:mb-10">Feel free to contact me about any project!</h1>
         <FormGroup id={nameId} label={nameLabel} value={name} changeFunction={setName} type="name" />
@@ -105,7 +105,7 @@ const FormGroup = ({
   changeFunction: Dispatch<SetStateAction<boolean>> | Dispatch<SetStateAction<string>>
 }) => {
   return (
-    <div className="flex flex-col mb-4 md:mb-8 md:flex-row w-full">
+    <div className="flex items-center flex-col mb-4 md:mb-8 md:flex-row w-full">
       <FormLabel id={id} label={label} />
       {typeof value === 'string' ? (
         <FormInput
@@ -130,66 +130,68 @@ const FormGroup = ({
   )
 }
 
-const FormLabel = ({ id, label }: { id: string; label: string }) => {
+const FormLabel: FC<{ id: string; label: string }> = ({ id, label }) => {
   return (
-    <label className="text-primary md:w-3/12" htmlFor={id}>
+    <label className="text-primary text-sm xl:text-base md:w-3/12" htmlFor={id}>
       {label}
     </label>
   )
 }
 
-const FormInput = ({
-  id,
-  // placeholder,
-  type,
-  value,
-  required,
-  changeFunction,
-}: {
+const FormInput: FC<{
   id: string
   // placeholder: string
   type: string
   value: string
   required?: boolean
   changeFunction: Dispatch<SetStateAction<string>>
-}) => {
-  return (
-    <input
-      name={id}
-      className="bg-primary border border-orange-900 w-full md:w-9/12"
-      type={type}
-      value={value}
-      required={required}
-      onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => changeFunction(value)}
-      // // placeholder={placeholder}
-    />
-  )
-}
-
-const FormCheckbox = ({
+}> = ({
   id,
   // placeholder,
   type,
   value,
   required,
   changeFunction,
-}: {
+}) => {
+  const handleChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => changeFunction(value)
+  return (
+    <input
+      name={id}
+      className="bg-primary border border-orange-900 w-9/12 text-background p-1"
+      type={type}
+      value={value}
+      required={required}
+      onChange={handleChange}
+      // // placeholder={placeholder}
+    />
+  )
+}
+
+const FormCheckbox: FC<{
   id: string
   // placeholder: string
   type: string
   value: boolean
   required?: boolean
   changeFunction: Dispatch<SetStateAction<boolean>>
+}> = ({
+  id,
+  // placeholder,
+  type,
+  value,
+  required,
+  changeFunction,
 }) => {
+  const handleChange = ({ target: { checked } }: ChangeEvent<HTMLInputElement>) => changeFunction(checked)
   return (
-    <div className="flex items-center mb-4 ">
+    <div className="flex items-center ">
       <input
         name={id}
         className="bg-primary border border-orange-900 mr-2"
         type={type}
         checked={value}
         required={required}
-        onChange={({ target: { checked } }: ChangeEvent<HTMLInputElement>) => changeFunction(checked)}
+        onChange={handleChange}
         // // placeholder={placeholder}
       />
       <div className="text-primary text-xs">
@@ -204,7 +206,7 @@ const FormAction = ({ label, submit, clickMethod }: { label: string; submit?: bo
     <button
       type={submit ? 'submit' : 'button'}
       className="w-1/2 text-primary"
-      onClick={clickMethod ? () => clickMethod() : undefined}
+      onClick={clickMethod ? clickMethod : undefined}
     >
       {label}
     </button>
