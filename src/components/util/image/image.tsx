@@ -13,16 +13,18 @@ interface Props {
   className?: string
 }
 
-const Image: FC<Props> = ({ imageName, maxWidth = 500, className = '' }) => (
+export const Image: FC<Props> = ({ imageName, maxWidth = 500, className = '' }) => (
   <StaticQuery
     query={graphql`
       query {
-        allImageSharp {
+        allFile {
           edges {
             node {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-                originalName
+              childImageSharp {
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
+                  originalName
+                }
               }
             }
           }
@@ -30,18 +32,19 @@ const Image: FC<Props> = ({ imageName, maxWidth = 500, className = '' }) => (
       }
     `}
     render={(data) => {
-      const image = data.allImageSharp.edges.find(
-        (edge: { node: { fluid: { originalName: string } } }) => edge.node.fluid.originalName === imageName,
+      const image = data.allFile.edges?.find(
+        (edge: { node: { childImageSharp: { fluid: { originalName: string } } } }) =>
+          edge?.node?.childImageSharp?.fluid?.originalName === imageName,
       )
+
       if (!image) {
         return null
       }
       return (
         <div style={{ maxWidth: maxWidth }}>
-          <Img className={className} fluid={image.node.fluid} />
+          <Img className={className} fluid={image.node.childImageSharp.fluid} />
         </div>
       )
     }}
   />
 )
-export default Image

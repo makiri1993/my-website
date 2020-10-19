@@ -7,7 +7,12 @@ navigation:
     link: https://github.com/makiri1993
   - name: LinkedIn
     link: https://de.linkedin.com/in/%F0%9F%92%BB-martin-kireew-93912a153/en-us
-introduction: "hey!\n\nmy name is martin.\n\nI'm a full stack developer based in berlin.\n\nI'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.\n\nCurrent side project:\nSeveral different applications with GO and React Native.\n\nClick on the button below to see my cv!"
+introduction: "hey!\n\nmy name is martin.\n\nI'm a full stack developer based in Berlin.\n\nI'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.\n\nCurrent side project:\nSeveral different applications with GO and React Native.\n\nClick on the button below to see my cv!"
+testimonials:
+  - name: super.ai
+    link: https://super.ai
+    image: superai.png
+    text: Martin worked with us for 12 months, helping us build our Collaborators feature. He also did a very smooth migration of our Crowd Hero application from Angular to React. His ramp up to the team was super fast, and we gradually involved him in additional projects. Martin was very knowledgeable and also always willing to help out. Working with him was very valuable for our team.
 skills:
   - name: 'Typescript'
     description: 'the better javascript'

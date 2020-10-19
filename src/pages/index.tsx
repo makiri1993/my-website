@@ -8,6 +8,7 @@ import SEO from '../components/util/seo/Seo'
 import { parseToSkillModel, SkillModelProps } from '../model/SkillModel'
 import { parseToTimelineModels, TimelineElementModelProps } from '../model/TImelineElementModel'
 import FormButton from '../components/form/FormButton'
+import { Testimonial, TestimonialProps } from '../components/Testimonial/Testimonial'
 
 interface IndexProps {
   data: {
@@ -15,6 +16,7 @@ interface IndexProps {
       frontmatter: {
         introduction: string
         skills: SkillModelProps[]
+        testimonials: TestimonialProps[]
       }
     }
     timelineEvents: {
@@ -24,7 +26,9 @@ interface IndexProps {
 }
 
 const IndexPage: FC<IndexProps> = ({ data: { siteData, timelineEvents } }) => {
-  const { introduction, skills } = siteData.frontmatter
+  const { introduction, skills, testimonials } = siteData.frontmatter
+  console.log({ testimonials })
+
   const { nodes } = timelineEvents
   const timelineElements = parseToTimelineModels(nodes)
   const skillElements = parseToSkillModel(skills)
@@ -38,6 +42,11 @@ const IndexPage: FC<IndexProps> = ({ data: { siteData, timelineEvents } }) => {
         author="Martin Kireew"
       />
       <Introduction content={introduction} />
+      <div className="container px-6 py-24">
+        {testimonials.map((testimonial, index) => (
+          <Testimonial key={index} {...testimonial} />
+        ))}
+      </div>
       <TimelineContainer timelineElements={timelineElements} />
       <Skills skills={skillElements} />
       <FormButton />
@@ -52,6 +61,12 @@ export const query = graphql`
     siteData: markdownRemark(frontmatter: { pageKey: { eq: "page_index" } }) {
       frontmatter {
         introduction
+        testimonials {
+          name
+          image
+          text
+          link
+        }
         skills {
           name
           description
