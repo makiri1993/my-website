@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react'
-import Nav from '../../nav/Nav'
-import './layout.scss'
-import Footer from '../../footer/Footer'
+import Nav from '../nav/Nav'
+import '../../tailwind.css'
+import Footer from '../footer/Footer'
 
 interface Props {
   children: ReactNode

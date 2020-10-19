@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import React, { FC } from 'react'
 import Introduction from '../components/introduction/Introduction'
-import Layout from '../components/layout/main/layout'
+import Layout from '../components/layout/layout'
 import Skills from '../components/skills/Skills'
 import TimelineContainer from '../components/timeline/TimelineContainer'
 import SEO from '../components/util/seo/Seo'

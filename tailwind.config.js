@@ -2,6 +2,10 @@
 const { fontSize, fontWeight, spacing, colors } = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  future: {
+    purgeLayersByDefault: true,
+  },
+  purge: [],
   plugins: [
     ({ addBase }) => {
       const newBaseStyles = {

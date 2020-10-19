@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React, { FC } from 'react'
-import Layout from '../components/layout/main/layout'
+import Layout from '../components/layout/layout'
 import TimelineElementModel, { TimelineFrontmatterProps } from '../model/TImelineElementModel'
 
 interface TimelinePostProps {
