@@ -1,14 +1,17 @@
 import { Link } from 'gatsby'
 import React, { FC } from 'react'
 import { useScrolling } from '../../hooks/resize-hooks'
-import TimelineElementModel from '../../model/TImelineElementModel'
+import { cutProjectDescription, TimelineElementEntry } from '../../model/TImelineElementModel'
 
 interface TimelineElementProps {
-  timelineData: TimelineElementModel
+  timelineData: TimelineElementEntry
 }
-const TimelineElement: FC<TimelineElementProps> = ({ timelineData }) => {
+
+const TimelineElement: FC<TimelineElementProps> = ({
+  timelineData: { header, html, information, place, slug, subheader, time },
+}) => {
   const { ref, visible } = useScrolling<HTMLDivElement>()
-  const { slug, header, subheader, information, place, time } = timelineData
+
   return (
     <Link className="cursor-pointer" to={slug}>
       <div
@@ -23,6 +26,11 @@ const TimelineElement: FC<TimelineElementProps> = ({ timelineData }) => {
           {place} | {time}
         </h4>
         <p className={`text-sm whitespace-pre-line text-primary`}>{information}</p>
+        <hr className="border-secondary mb-4" />
+        <p
+          className={`text-sm whitespace-pre-line font-light text-primary`}
+          dangerouslySetInnerHTML={{ __html: cutProjectDescription(html) }}
+        ></p>
       </div>
     </Link>
   )

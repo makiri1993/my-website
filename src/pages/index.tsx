@@ -87,8 +87,10 @@ export const query = graphql`
           subheader
           time
           place
+          link
           information
         }
+        html
       }
     }
   }
