@@ -64,9 +64,9 @@ Roennebergstr. 4
 
 Deutschland
 
-Telefon: +49 174 3098379
+Telefon: +49 176 41828286
 
-E-Mail: mailto:kireew.martin@icloud.com
+E-Mail: mailto:martin@techstudio.dev
 
 Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
 

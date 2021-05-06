@@ -10,15 +10,15 @@ Martin Kireew
 
 Full Stack Developer in Berlin
 
-Roennebergstr. 4
+Voltairestraße 11
 
-12161 Berlin
+10179 Berlin
 
 ## Kontakt
 
-Telefon: +491743098379
+Telefon: +49 176 41828286
 
-E-Mail: mailto:kireew.martin@icloud.com
+E-Mail: mailto:martin@techstudio.dev
 
 ## Streitschlichtung
 
