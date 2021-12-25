@@ -1,0 +1,71 @@
+---
+pageKey: page_index
+navigation:
+  - name: home
+    link: /
+  - name: github
+    link: https://github.com/makiri1993
+  - name: LinkedIn
+    link: https://de.linkedin.com/in/%F0%9F%92%BB-martin-kireew-93912a153/en-us
+introduction: "hey!\n\nmy name is martin.\n\nI'm a full stack developer based in Berlin.\n\nI'm a huge entusiast of new tech always looking for a new opportunity to shape my skills and my knowledge.\n\nCurrent side project:\nSeveral different applications with GO and React Native.\n\nClick on the button below to see my cv!"
+testimonials:
+  - name: super.ai
+    link: https://super.ai
+    image: superai.png
+    text: Martin worked with us for 12 months, helping us build our Collaborators feature. He also did a very smooth migration of our Crowd Hero application from Angular to React. His ramp up to the team was super fast, and we gradually involved him in additional projects. Martin was very knowledgeable and also always willing to help out. Working with him was very valuable for our team.
+skills:
+  - name: 'Typescript'
+    description: 'the better javascript'
+  - name: 'HTML'
+    description: 'enough for every skeleton'
+  - name: 'CSS'
+    description: 'in mastering'
+  - name: 'Javascript'
+    description: 'new language features'
+  - name: 'Swift 5'
+    description: 'basics'
+  - name: 'Java'
+    description: 'only java7'
+  - name: 'iOS'
+    description: 'basics'
+  - name: 'ReactJS'
+    description: 'ready to build everything'
+  - name: 'Hooks'
+    description: 'ready to build everything'
+  - name: 'VueJS'
+    description: 'experiencing the learning cure'
+  - name: 'Vuex'
+    description: 'experiencing the learning cure'
+  - name: 'NuxtJS'
+    description: 'experiencing the learning cure'
+  - name: 'GatsbyJS'
+    description: 'from the beginning'
+  - name: 'Jest'
+    description: 'way to go'
+  - name: 'Webpack'
+    description: 'better stay default'
+  - name: 'HandlebarsJS'
+    description: 'better stay default'
+  - name: 'Strapi'
+    description: 'better stay default'
+  - name: 'UI - Design'
+    description: 'for different projects'
+  - name: 'Kubernetes'
+    description: 'for different projects'
+  - name: 'Docker'
+    description: 'for different projects'
+  - name: 'Node.js'
+    description: 'private usage'
+  - name: 'KOA'
+    description: 'private usage'
+  - name: 'Express'
+    description: 'private usage'
+  - name: 'Tracking'
+    description: 'private usage'
+  - name: 'REST'
+    description: 'work experience'
+  - name: 'Spring'
+    description: 'some time ago'
+  - name: 'UX - Design'
+    description: 'for different projects'
+---

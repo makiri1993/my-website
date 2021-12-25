@@ -6,3 +6,7 @@ target = "index.html"
 command = "sh"
 command_arguments = ["-c", "npx tailwindcss -i tailwind.css -o $TRUNK_STAGING_DIR/tailwind.css"]
 stage = "build"
+
+# [[proxy]]
+# rewrite = "/api/v1/"
+# backend = "http://localhost:8080/content"

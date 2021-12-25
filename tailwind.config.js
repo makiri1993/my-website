@@ -24,6 +24,9 @@ module.exports = {
         // "background-lighter": colors.gray[700],
         primary: "#C17C74",
         secondary: "#79A9D1"
+      },
+      animation: {
+        "ping-slow": "ping 4s cubic-bezier(0, 0, 0.2, 1) infinite"
       }
     }
   },
