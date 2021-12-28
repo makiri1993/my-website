@@ -1,6 +1,7 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-  mode: "jit",
-  purge: ["src/**/*.rs"],
+  content: ["src/**/*.rs"],
   // darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -19,11 +20,8 @@ module.exports = {
         full: "100%"
       },
       colors: {
-        // background: colors.gray[800],
-        // "background-darker": colors.gray[900],
-        // "background-lighter": colors.gray[700],
-        primary: "#C17C74",
-        secondary: "#79A9D1"
+        background: colors.slate,
+        primary: colors.orange
       },
       animation: {
         "ping-slow": "ping 4s cubic-bezier(0, 0, 0.2, 1) infinite"

@@ -14,7 +14,7 @@ pub fn testimonials(props: &Props) -> Html {
     });
 
     html! {
-        <div class="container px-6 py-24">
+        <div class="container px-2 md:px-6 py-24">
             {for testimonials}
         </div>
     }

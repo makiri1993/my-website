@@ -19,8 +19,8 @@ pub fn timeline_container(props: &Props) -> Html {
         });
 
     html! {
-        <div class="bg-background-darker">
-            <div class="container flex flex-col px-6 py-24 ">
+        <div class="bg-background-900">
+            <div class="container flex flex-col-reverse px-2 md:px-6 py-24">
                 {for timeline_rows}
             </div>
         </div>

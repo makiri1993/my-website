@@ -25,23 +25,23 @@ pub fn header() -> Html {
     ];
 
     html! {
-        <nav class="sticky top-0 bg-gray-900 flex justify-center">
+        <nav class="sticky top-0 bg-background-900 flex justify-center z-10">
             <div class="py-3">
                 {for items.iter().cloned().map(|item| html! {
-                    <a class="text-primary border-b border-secondary mx-4 xl:mx-10" href={item.link}>
+                    <a class="text-primary-300 border-b border-primary-600 mx-4 xl:mx-10" href={item.link}>
                         {item.name}
                     </a>
                 })}
         //   {navigation.map(({ name, link }, index) => {
         //     if (link.includes('http')) {
         //       return (
-        //         <a key={index} class="text-primary border-b border-secondary mx-4 xl:mx-10" href={link}>
+        //         <a key={index} class="text border-b border- mx-4 xl:mx-10" href={link}>
         //           {name}
         //         </a>
         //       )
         //     } else {
         //       return (
-        //         <Link key={index} class="text-primary border-b border-secondary mx-4 xl:mx-10" to={link}>
+        //         <Link key={index} class="text border-b border- mx-4 xl:mx-10" to={link}>
         //           {name}
         //         </Link>
         //       )

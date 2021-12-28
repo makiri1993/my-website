@@ -10,6 +10,7 @@ use yew::prelude::*;
 use crate::models::timeline_post::TimelinePost;
 
 mod components;
+mod hooks;
 mod models;
 
 const INDEX_YAML: &str = "http://localhost:8080/content/pages/index.yaml";
@@ -47,7 +48,7 @@ fn app() -> Html {
     }
 
     html! {
-        <div class="bg-gray-800 h-full">
+        <div class="bg-background-800 h-full">
             <Header />
             <Testimonials testimonials={index_content.testimonials.clone()} />
             <TimelineContainer timeline_posts={(*timeline_posts).clone()} />

@@ -11,3 +11,13 @@ pub struct TimelinePost {
     pub description: String,
     pub technologies: Option<Vec<String>>,
 }
+
+impl TimelinePost {
+    pub fn preview(&self) -> String {
+        if self.description.len() >= 160 {
+            format!("{}...", &self.description[..160])
+        } else {
+            (&self.description).to_string()
+        }
+    }
+}
