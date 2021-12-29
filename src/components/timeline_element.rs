@@ -1,6 +1,10 @@
 use crate::components::timeline_technology::TimelineTechnology;
 use crate::models::timeline_post::TimelinePost;
-use yew::{classes, function_component, html, use_state, Callback, Properties};
+
+use yew::{
+    classes, function_component, html, use_effect_with_deps, use_mut_ref, use_node_ref, use_state,
+    Callback, Properties,
+};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -9,12 +13,30 @@ pub struct Props {
 
 #[function_component(TimelineElement)]
 pub fn timeline_element(props: &Props) -> Html {
+    let node_ref = use_node_ref();
     let show = use_state(|| false);
+    let expanded_height = use_mut_ref(|| 0);
+
     let onclick = {
         let show = show.clone();
         Callback::from(move |_: yew::MouseEvent| show.set(!*show))
     };
 
+    // let window = window();
+    // log::info!("{:?}", window.inner_height());
+    {
+        let node_ref = node_ref.clone();
+        let expanded_height = expanded_height.clone();
+        use_effect_with_deps(
+            move |_| {
+                if let Some(div) = node_ref.cast::<web_sys::HtmlElement>() {
+                    *expanded_height.borrow_mut() = div.scroll_height();
+                }
+                || ()
+            },
+            (),
+        );
+    }
     let technologies = match &props.timeline_post.technologies {
         Some(technologies) => technologies
             .iter()
@@ -43,13 +65,17 @@ pub fn timeline_element(props: &Props) -> Html {
             <p class="text-sm whitespace-pre-line text-primary-300 mb-4">
                 {props.timeline_post.information.clone()}
             </p>
-            <div class={classes!(
+            <div ref={node_ref} class={classes!(
                 "h-0",
                 "overflow-hidden",
-                show.then(|| Some("h-auto")),
-            )}>
+                "transition-[height]",
+                "duration-1000",
+                "ease-in-out",
+            )}
+            style={format!("height: {}px", if *show { *expanded_height.borrow() } else { 0 })}
+            >
                 <p class="text-sm whitespace-pre-line font-light text-primary-300">
-                    {props.timeline_post.preview()}
+                    {props.timeline_post.description.clone()}
                 </p>
             </div>
         </div>

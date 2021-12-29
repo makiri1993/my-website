@@ -530,10 +530,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0px;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-3 {
   height: 0.75rem;
 }
@@ -788,6 +784,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.transition-\[height\] {
+  transition-property: height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
