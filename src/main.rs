@@ -1,87 +1,40 @@
-use components::{
-    header::Header, testimonials::Testimonials, timeline_container::TimelineContainer,
-};
-
-use models::index_content::IndexContent;
-
-use reqwasm::http::Request;
+use pages::{home::Home, imprint::Imprint, privacy::Privacy};
 use yew::prelude::*;
-
-use crate::models::timeline_post::TimelinePost;
+use yew_router::prelude::*;
 
 mod components;
 mod hooks;
 mod models;
+mod pages;
 
-const INDEX_YAML: &str = "http://localhost:8080/content/pages/index.yaml";
-const TIMELINE_POST_YAML: &str = "http://localhost:8080/content/timeline-posts/";
+#[derive(Clone, Routable, PartialEq)]
+enum Route {
+    #[at("/")]
+    Home,
+    #[at("/imprint")]
+    Imprint,
+    #[at("/privacy")]
+    Privacy,
+    #[not_found]
+    #[at("/404")]
+    NotFound,
+}
 
+fn switch(routes: &Route) -> Html {
+    match routes {
+        Route::Home => html! { <Home /> },
+        Route::Imprint => html! { <Imprint /> },
+        Route::Privacy => html! { <Privacy /> },
+        Route::NotFound => html! { <h1>{ "404" }</h1> },
+    }
+}
 #[function_component(App)]
 fn app() -> Html {
-    let index_content = use_state(|| IndexContent {
-        page_key: "".to_string(),
-        introduction: "".to_string(),
-        testimonials: vec![],
-        navigation: vec![],
-    });
-
-    let timeline_posts = use_state(|| vec![] as Vec<TimelinePost>);
-
-    {
-        let index_content = index_content.clone();
-        let timeline_posts = timeline_posts.clone();
-        use_effect_with_deps(
-            move |_| {
-                let timeline_posts = timeline_posts.clone();
-
-                wasm_bindgen_futures::spawn_local(async move {
-                    let index_yaml = get_yaml_content(INDEX_YAML).await;
-                    index_content.set(serde_yaml::from_str(&index_yaml).unwrap());
-
-                    let posts = get_timeline_posts().await;
-                    timeline_posts.set(posts);
-                });
-                || ()
-            },
-            (),
-        );
-    }
-
     html! {
-        <div class="bg-background-800 h-full">
-            <Header />
-            <Testimonials testimonials={index_content.testimonials.clone()} />
-            <TimelineContainer timeline_posts={(*timeline_posts).clone()} />
-        </div>
+        <BrowserRouter>
+            <Switch<Route> render={Switch::render(switch)} />
+        </BrowserRouter>
     }
-}
-
-async fn get_timeline_posts() -> Vec<TimelinePost> {
-    let mut posts: Vec<TimelinePost> = vec![];
-    let mut yaml_index = 1;
-    loop {
-        let timeline_post_yaml =
-            get_yaml_content(&format!("{}{}.yaml", TIMELINE_POST_YAML, yaml_index)).await;
-        let post = serde_yaml::from_str::<TimelinePost>(&timeline_post_yaml);
-        match post {
-            Ok(post) => posts.push(post),
-            Err(_) => break,
-        }
-
-        yaml_index += 1;
-    }
-
-    posts
-}
-
-async fn get_yaml_content(url: &str) -> String {
-    Request::get(url)
-        .send()
-        .await
-        .expect("Fetching yaml file worked")
-        .text()
-        .await
-        .expect("No value found")
 }
 
 fn main() {

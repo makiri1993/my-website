@@ -41,8 +41,16 @@
 
 @layer base {
   html {
+    @apply bg-background-800;
+    @apply h-full;
     font-family: "JetBrains Mono", BlinkMacSystemFont, "Segoe UI", Roboto,
       "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  body {
+    @apply h-full;
+    @apply flex;
+    @apply flex-col;
   }
 }
