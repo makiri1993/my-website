@@ -1,3 +1,48 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 100;
+  src: url("./content/fonts/JetBrainsMono-Thin.woff2") format("woff2"),
+    url("./content/fonts/JetBrainsMono-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 200;
+  src: url("./content/fonts/JetBrainsMono-ExtraLight.woff2") format("woff2"),
+    url("./content/fonts/JetBrainsMono-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 300;
+  src: url("./content/fonts/JetBrainsMono-Light.woff2") format("woff2"),
+    url("./content/fonts/JetBrainsMono-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 400;
+  src: url("./content/fonts/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("./content/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 500;
+  src: url("./content/fonts/JetBrainsMono-Medium.woff2") format("woff2"),
+    url("./content/fonts/JetBrainsMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 700;
+  src: url("./content/fonts/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("./content/fonts/JetBrainsMono-Bold.ttf") format("truetype");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "JetBrains Mono", BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+}

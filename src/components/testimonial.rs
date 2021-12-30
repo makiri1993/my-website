@@ -16,7 +16,7 @@ pub fn testimonial(props: &Props) -> Html {
                 <img class="w-20 md:w-24" src={props.image.clone()} />
                 <h2 class="py-4 text-primary-300">{props.name.clone()}</h2>
             </a>
-            <blockquote class="w-10/12 md:w-9/12 lg:px-24 xl:px-40 font-light lg:text-lg text-center text-primary-300 leading-relaxed">
+            <blockquote class="w-10/12 md:w-9/12 lg:px-24 xl:px-40 font-thin lg:text-lg text-center text-primary-300 leading-relaxed">
               {format!("\"{}\"", props.text)}
             </blockquote>
         </div>
