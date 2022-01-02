@@ -1,4 +1,7 @@
-use yew::{function_component, html};
+use yew::{function_component, html, virtual_dom::VNode};
+use yew_router::components::Link;
+
+use crate::Route;
 
 #[derive(Clone)]
 struct HeaderItem {
@@ -24,29 +27,28 @@ pub fn header() -> Html {
         },
     ];
 
+    let header_items = items
+        .iter()
+        .cloned()
+        .map(|item| {
+            if item.link.contains("https://") {
+                html! {
+                    <a class="text-primary-300 border-b border-primary-600" href={item.link}>
+                       {item.name}
+                    </a>
+                }
+            } else {
+                html! {
+                    <Link<Route> to={Route::Home} classes="text-primary-300 border-b border-primary-600">{ item.name }</Link<Route>>
+                }
+            }
+        })
+        .collect::<Vec<VNode>>();
+
     html! {
         <nav class="sticky top-0 bg-background-900 flex justify-center z-10">
-            <div class="py-3">
-                {for items.iter().cloned().map(|item| html! {
-                    <a class="text-primary-300 border-b border-primary-600 mx-4 xl:mx-10" href={item.link}>
-                        {item.name}
-                    </a>
-                })}
-        //   {navigation.map(({ name, link }, index) => {
-        //     if (link.includes('http')) {
-        //       return (
-        //         <a key={index} class="text border-b border- mx-4 xl:mx-10" href={link}>
-        //           {name}
-        //         </a>
-        //       )
-        //     } else {
-        //       return (
-        //         <Link key={index} class="text border-b border- mx-4 xl:mx-10" to={link}>
-        //           {name}
-        //         </Link>
-        //       )
-        //     }
-        //   })}
+            <div class="py-3 space-x-12">
+                {for header_items}
         </div>
       </nav>
     }
