@@ -1,0 +1,8 @@
+id: 5
+header: "Website for Interkultureller Sozialdienst"
+subheader: "Freelancing"
+place: "Remote"
+time: "June 2018"
+link: https://iks-hannover.de/
+information: "First project with typescript, react, gatsby and styled-components."
+description: "Another freelancer and I reimplemented the design with a new stack. We used Typescript, react, and gatsby for a JAM-Stack site with netlifyCMS. The site is right now on the first page on google when looking for similar companies in Hanover. The site is an ongoing project, so we are always maintaining the stack or implementing new features. The site is GDPR-ready and blazing fast."

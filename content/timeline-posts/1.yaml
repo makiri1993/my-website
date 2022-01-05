@@ -1,0 +1,13 @@
+id: 1
+header: "Bachelor's Degree"
+subheader: "University of Hildesheim / Finanz Informatik GmbH"
+place: "Hanover"
+time: "October 2016 - January 2017"
+information: "Writing my bachelor's thesis at Finanz Informatik GmbH about conception. Designing a new feature in the cms of the Sparkasse."
+description: "I started studying in Hildesheim near Hanover,Germany in 2013. During the courses I realized my passion for code. In university I focused mainly on programming. Unfortunately the courses were pretty much deprecated and only interesting because it was the only possibility to get more in touch with coding. After some time I found out that Finanz Informatik is a partner of my university so I applied there as a working student. Programming languages I learned in university:"
+technologies:
+  - Java
+  - JavaEE
+  - HTML
+  - CSS
+  - C++
