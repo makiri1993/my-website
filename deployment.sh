@@ -1,3 +1,3 @@
-sudo apt update
-sudo apt upgrade
-sudo apt install rustc
+apt update
+apt upgrade
+apt install rustc
