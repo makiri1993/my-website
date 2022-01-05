@@ -1,3 +1,3 @@
-apt update
-apt upgrade
-apt install rustc
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install --locked trunk
+trunk build
