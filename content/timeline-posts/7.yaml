@@ -4,7 +4,7 @@ subheader: "Schütze Consulting AG"
 place: "Berlin"
 time: "August 2018 - January 2019"
 link: https://www.schuetze.ag/
-information: "Javascript, Typescript, Webpack, React, Java, Maven, Docker"
+summary: "First dev job in Berlin diving deep into Typescript and enterprise applications"
 description: "Schütze is a consulting company mostly working with the public sector. Here I developed complex applications with Redux with integrations like Google Maps. For example, I was mainly working on the Kita navigator (https://kita-navigator.berlin.de), an application for Berlin's parents to find a kindergarten spot. I also did work on the components library for various applications. In addition to that, I also maintained an enormous Java application for managing the complex relations between Berlin, the employees working in the kindergarten system, and the parents."
 technologies:
   - React

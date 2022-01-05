@@ -7,7 +7,7 @@ pub struct TimelinePost {
     pub subheader: String,
     pub place: String,
     pub time: String,
-    pub information: String,
+    pub summary: String,
     pub description: String,
     pub technologies: Option<Vec<String>>,
 }

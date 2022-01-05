@@ -4,7 +4,7 @@ subheader: "Trade Republic"
 place: "Berlin"
 time: "February 2019 - July 2019"
 link: https://www.traderepublic.com
-information: "Javascript, Typescript, Webpack, Vue, Nuxt, Vuex, Kubernetes, Docker"
+summary: "Joined an upcoming startup right after going live"
 description: "Trade Republic is Germany's first mobile broker. I was working there as the only frontend engineer. It was a very challenging time because I implemented custom solutions for a blog, a help center and maintained at the same time the website and back-office for the internal usage of banking processes. The back-office was a full application with frontend and backend, both written in Typescript. In addition to that, I was in charge of the deployments in Kubernetes. I loved working at a fintech. Unfortunately, I realized that I want to do more independent and in my future. After TR I started to freelance in Berlin."
 technologies:
   - Vue
@@ -17,5 +17,5 @@ technologies:
   - Javascript
   - Docker
   - Kubernetes
-  - MVVM -> Paradigm
-  - HandleBarsJS -> I'm really trying to avoid this one :D
+  - MVVM
+  - HandleBarsJS

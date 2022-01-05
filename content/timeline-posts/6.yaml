@@ -4,5 +4,12 @@ subheader: "Freelancing"
 place: "Remote"
 time: "August 2018"
 link: https://immajung.com
-information: "Another project with typescript, react, gatsby, netlifyCMS and styled-components."
+summary: "Another project with typescript, react, gatsby, netlifyCMS and styled-components."
 description: "Some friends of mine and me started our agency with a focus on coding. We are four full-stack developers trying to step into freelancing and gain some momentum with our site. Unfortunately, the site is under construction right now. The relaunch will happen soon."
+technologies:
+  - React
+  - Javascript
+  - Typescript
+  - Gatsby
+  - Styled-Components
+  - yarn

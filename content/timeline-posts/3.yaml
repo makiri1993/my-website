@@ -3,7 +3,7 @@ header: "App for Testing Department (automotive industry)"
 subheader: "Freelancing"
 place: "Remote"
 time: "March 2017"
-information: "Android, Java"
+summary: "A first try developing a mobile application"
 description: "For the first time as a freelancer, I worked on an app for car testing in the automotive industry. It was my first time doing app development."
 technologies:
   - Android Studio

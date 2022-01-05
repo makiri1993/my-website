@@ -68,7 +68,7 @@ pub fn timeline_element(props: &Props) -> Html {
             </div>
             <hr class="mt-2 mb-4 w-4/12 border-primary-600" />
             <p class="text-xs whitespace-pre-line text-primary-300 mb-4">
-                {props.timeline_post.information.clone()}
+                {props.timeline_post.summary.clone()}
             </p>
             <div ref={node_ref} class={classes!(
                 "h-0",

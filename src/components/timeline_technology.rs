@@ -9,7 +9,7 @@ pub struct Props {
 #[function_component(TimelineTechnology)]
 pub fn timeline_technology(props: &Props) -> Html {
     html! {
-        <div class="px-2 bg-primary-900  rounded text-primary-300 text-sm">
+        <div class="px-2 bg-primary-900  rounded text-primary-300 text-xs">
             {props.children.clone()}
         </div>
     }

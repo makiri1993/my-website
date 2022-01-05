@@ -4,7 +4,7 @@ subheader: "Super.ai"
 place: "Berlin"
 time: "September 2019 - September 2020"
 link: https://super.ai
-information: "Typescript, React, Redux, Re:DOM, Canvas, AWS, Java, Python"
+summary: "Another startup challenge based in the AI world"
 description: "Super.ai is a startup building a platform for artificial intelligence. I implemented different features from the backend to frontend and data labeling engines. The biggest challenge was the development of new engines and complex Uis for current customers on-demand with a tight schedule and quick project planning. Another challenge was the migration of the labeling web application from Angular to React with an incremental approach of using web components. At super.ai, the technical debt was kept low, and the quality of code very high."
 technologies:
   - Typescript
