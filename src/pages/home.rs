@@ -6,8 +6,8 @@ use crate::components::{
 };
 use crate::models::{index_content::IndexContent, timeline_post::TimelinePost};
 
-const INDEX_YAML: &str = "http://localhost:8080/content/pages/index.yaml";
-const TIMELINE_POST_YAML: &str = "http://localhost:8080/content/timeline-posts/";
+const INDEX_YAML: &str = "https://www.maki.codes/content/pages/index.yaml";
+const TIMELINE_POST_YAML: &str = "https://www.maki.codes/content/timeline-posts/";
 
 #[function_component(Home)]
 pub fn home() -> Html {
