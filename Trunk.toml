@@ -4,7 +4,7 @@ target = "index.html"
 
 [[hooks]]
 command = "sh"
-command_arguments = ["-c", "./tailwindcss -- -i tailwind.css -o $TRUNK_STAGING_DIR/tailwind.css"]
+command_arguments = ["-c", "./tailwindcss.sh -- -i tailwind.css -o $TRUNK_STAGING_DIR/tailwind.css"]
 stage = "build"
 
 # [[proxy]]
