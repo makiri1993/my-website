@@ -4,5 +4,5 @@ rustup target add wasm32-unknown-unknown
 cargo install --locked trunk
 ls -lsa
 trunk config show
-./tailwindcss -- -i tailwind.css -o dist/tailwind.css
+sh tailwindcss -- -i tailwind.css -o dist/tailwind.css
 trunk build --release
