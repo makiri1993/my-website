@@ -1,36 +1,26 @@
-use yew::{function_component, html, use_effect_with_deps, use_state};
-
 use crate::components::{
     footer::Footer, header::Header, testimonials::Testimonials,
     timeline_container::TimelineContainer,
 };
 use crate::models::{index_content::IndexContent, timeline_post::TimelinePost};
+use std::include_str;
+use yew::{function_component, html, use_effect_with_deps, use_state};
 
-const INDEX_YAML: &str = "/content/pages/index.yaml";
+const INDEX_CONTENT: &str = include_str!("../../content/pages/index.yaml");
+
 const TIMELINE_POST_YAML: &str = "/content/timeline-posts/";
 
 #[function_component(Home)]
 pub fn home() -> Html {
-    let index_content = use_state(|| IndexContent {
-        page_key: "".to_string(),
-        introduction: "".to_string(),
-        testimonials: vec![],
-        navigation: vec![],
-    });
+    let index_content = serde_yaml::from_str::<IndexContent>(INDEX_CONTENT).unwrap();
 
     let timeline_posts = use_state(|| vec![] as Vec<TimelinePost>);
 
     {
-        let index_content = index_content.clone();
         let timeline_posts = timeline_posts.clone();
         use_effect_with_deps(
             move |_| {
-                let timeline_posts = timeline_posts.clone();
-
                 wasm_bindgen_futures::spawn_local(async move {
-                    let index_yaml = get_yaml_content(INDEX_YAML).await;
-                    index_content.set(serde_yaml::from_str(&index_yaml).unwrap());
-
                     let posts = get_timeline_posts().await;
                     timeline_posts.set(posts);
                 });
@@ -43,7 +33,7 @@ pub fn home() -> Html {
     html! {
         <>
             <Header />
-            <Testimonials testimonials={index_content.testimonials.clone()} />
+            <Testimonials testimonials={index_content.testimonials} />
             <TimelineContainer timeline_posts={(*timeline_posts).clone()} />
             <Footer />
         </>
