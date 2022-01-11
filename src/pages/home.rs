@@ -10,31 +10,54 @@ const INDEX_CONTENT: &str = include_str!("../../content/pages/index.yaml");
 
 const TIMELINE_POST_YAML: &str = "/content/timeline-posts/";
 
+macro_rules! incl_profiles {
+    ( $( $x:expr ),* ) => {
+        {
+            let mut posts = vec![];
+            $(
+                posts.push(include_str!(concat!("../../content/timeline-posts/", $x, ".yaml")));
+            )*
+
+            posts
+        }
+    };
+}
+
+fn convert_to_timeline_posts(items: Vec<&str>) -> Vec<TimelinePost> {
+    items
+        .iter()
+        .map(|text| serde_yaml::from_str::<TimelinePost>(text).unwrap())
+        .collect()
+}
+
 #[function_component(Home)]
 pub fn home() -> Html {
     let index_content = serde_yaml::from_str::<IndexContent>(INDEX_CONTENT).unwrap();
+    let timeline_post_content: Vec<&str> =
+        incl_profiles!("1", "2", "3", "4", "5", "6", "7", "8", "10", "11");
+    log::info!("{:?}", timeline_post_content);
+    let timeline_posts = convert_to_timeline_posts(timeline_post_content);
 
-    let timeline_posts = use_state(|| vec![] as Vec<TimelinePost>);
-
-    {
-        let timeline_posts = timeline_posts.clone();
-        use_effect_with_deps(
-            move |_| {
-                wasm_bindgen_futures::spawn_local(async move {
-                    let posts = get_timeline_posts().await;
-                    timeline_posts.set(posts);
-                });
-                || ()
-            },
-            (),
-        );
-    }
+    // {
+    //     let timeline_posts = timeline_posts.clone();
+    //     use_effect_with_deps(
+    //         move |_| {
+    //             wasm_bindgen_futures::spawn_local(async move {
+    //                 // let posts = get_timeline_posts().await;
+    //                 // timeline_posts.set(posts);
+    //             });
+    //             || ()
+    //         },
+    //         (),
+    //     );
+    // }
 
     html! {
         <>
             <Header />
             <Testimonials testimonials={index_content.testimonials} />
-            <TimelineContainer timeline_posts={(*timeline_posts).clone()} />
+            // <TimelineContainer timeline_posts={(*timeline_posts).clone()} />
+            <TimelineContainer timeline_posts={timeline_posts} />
             <Footer />
         </>
     }
