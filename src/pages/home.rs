@@ -4,11 +4,9 @@ use crate::components::{
 };
 use crate::models::{index_content::IndexContent, timeline_post::TimelinePost};
 use std::include_str;
-use yew::{function_component, html, use_effect_with_deps, use_state};
+use yew::{function_component, html};
 
 const INDEX_CONTENT: &str = include_str!("../../content/pages/index.yaml");
-
-const TIMELINE_POST_YAML: &str = "/content/timeline-posts/";
 
 macro_rules! incl_profiles {
     ( $( $x:expr ),* ) => {
@@ -35,22 +33,7 @@ pub fn home() -> Html {
     let index_content = serde_yaml::from_str::<IndexContent>(INDEX_CONTENT).unwrap();
     let timeline_post_content: Vec<&str> =
         incl_profiles!("1", "2", "3", "4", "5", "6", "7", "8", "10", "11");
-    log::info!("{:?}", timeline_post_content);
     let timeline_posts = convert_to_timeline_posts(timeline_post_content);
-
-    // {
-    //     let timeline_posts = timeline_posts.clone();
-    //     use_effect_with_deps(
-    //         move |_| {
-    //             wasm_bindgen_futures::spawn_local(async move {
-    //                 // let posts = get_timeline_posts().await;
-    //                 // timeline_posts.set(posts);
-    //             });
-    //             || ()
-    //         },
-    //         (),
-    //     );
-    // }
 
     html! {
         <>
@@ -63,30 +46,30 @@ pub fn home() -> Html {
     }
 }
 
-async fn get_timeline_posts() -> Vec<TimelinePost> {
-    let mut posts: Vec<TimelinePost> = vec![];
-    let mut yaml_index = 1;
-    loop {
-        let timeline_post_yaml =
-            get_yaml_content(&format!("{}{}.yaml", TIMELINE_POST_YAML, yaml_index)).await;
-        let post = serde_yaml::from_str::<TimelinePost>(&timeline_post_yaml);
-        match post {
-            Ok(post) => posts.push(post),
-            Err(_) => break,
-        }
+// async fn get_timeline_posts() -> Vec<TimelinePost> {
+//     let mut posts: Vec<TimelinePost> = vec![];
+//     let mut yaml_index = 1;
+//     loop {
+//         let timeline_post_yaml =
+//             get_yaml_content(&format!("{}{}.yaml", TIMELINE_POST_YAML, yaml_index)).await;
+//         let post = serde_yaml::from_str::<TimelinePost>(&timeline_post_yaml);
+//         match post {
+//             Ok(post) => posts.push(post),
+//             Err(_) => break,
+//         }
 
-        yaml_index += 1;
-    }
+//         yaml_index += 1;
+//     }
 
-    posts
-}
+//     posts
+// }
 
-async fn get_yaml_content(url: &str) -> String {
-    reqwasm::http::Request::get(url)
-        .send()
-        .await
-        .expect("Fetching yaml file worked")
-        .text()
-        .await
-        .expect("No value found")
-}
+// async fn get_yaml_content(url: &str) -> String {
+//     reqwasm::http::Request::get(url)
+//         .send()
+//         .await
+//         .expect("Fetching yaml file worked")
+//         .text()
+//         .await
+//         .expect("No value found")
+// }
